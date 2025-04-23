@@ -1,4 +1,4 @@
-# FED1-exam-Nirush (Square Pumpkin 📸)
+# FED1-exam-Nirush (Lens of Wanderlust 📸)
 
 # Goal 🥅
 
