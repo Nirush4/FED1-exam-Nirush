@@ -1,0 +1,74 @@
+@import url(/css/common-css.css);
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+.home {
+    color: var(--color-primary-text) !important;
+}
+
+@media (width <850px) {
+    .home {
+        color: #ffffff !important;
+    }
+}
+
+.hero-section-div {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+    background-color: var(--color-primary);
+
+    .img-div {
+        width: 95.5%;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+}
+
+.hero-section-text {
+    width: 100%;
+    height: auto;
+    background-color: var(--color-primary);
+    padding: 5% 7%;
+
+    h2 {
+        font-family: "Italiana", sans-serif;
+        font-size: clamp(1.3rem, 0.7999999999999999rem + 2vw, 2.6rem);
+        letter-spacing: 1px;
+        font-weight: 600;
+        padding-bottom: 2.5rem;
+    }
+
+    p {
+        font-size: clamp(0.9rem, 0.8400000000000001rem + 0.29999999999999993vw, 1.2rem);
+        font-weight: 300;
+        padding-bottom: 2rem;
+    }
+
+    p:nth-child(3) {
+        padding-bottom: 0;
+    }
+
+}
+
+@media (width<999px) {
+
+    .hero-section-div .img-div {
+        width: 100%;
+    }
+}
+
+@media (width <850px) {
+    .hero-section-text h2 {
+        padding-bottom: 1.5rem;
+    }
+
+    .hero-section-text p {
+        padding-bottom: 1.2rem;
+    }
+}
