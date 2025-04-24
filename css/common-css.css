@@ -31,6 +31,9 @@ p,
 a {
     line-height: 1.5rem;
     font-family: 'Poppins';
+    letter-spacing: 0.3px;
+    line-height: 1.8rem;
+    text-align: justify;
 }
 
 /*imp! HEADER */
@@ -38,15 +41,24 @@ a {
 
 header {
     display: flex;
+    /* position: sticky;
+    z-index: 500;
+    top: 0rem; */
 }
 
 .desktop-nav {
     display: flex;
-    align-items: start;
+    align-items: center;
+    gap: 2rem;
     width: 100%;
     height: 100%;
     max-height: 4rem;
-    padding: 4rem 7rem 5.5rem 10rem;
+    padding: 4rem 7%;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0rem;
+    z-index: 100;
+    box-shadow: 0rem 0.25rem 0.938rem #00000010;
 }
 
 .logo-main-container {
@@ -59,24 +71,23 @@ header {
 }
 
 .logo {
-    display: inline-block;
-    margin: 10px;
     height: 7rem;
     width: auto;
-    position: absolute;
-    top: 4rem;
+    /* position: absolute;
+    top: 3rem;
     left: 4rem;
+    z-index: 200; */
 }
 
 .logo img {
-    height: 7rem;
+    height: 100%;
     width: auto;
 }
 
 .bg-yellow-top-left {
     background: var(--color-primary);
     width: 10%;
-    height: 100rem;
+    height: 20rem;
 }
 
 h1 {
@@ -85,8 +96,8 @@ h1 {
     font-weight: 400;
     font-style: normal;
     position: absolute;
-    top: 9.8rem;
-    right: 7.6rem;
+    top: 9rem;
+    right: 8.6rem;
     color: var(--color-primary-text);
 }
 
@@ -124,12 +135,12 @@ h1 {
 }
 
 .c-open-menu {
-    top: 8%;
+    top: 3rem;
     right: 8%;
 }
 
 .c-close-menu {
-    top: 8%;
+    top: 3rem;
     right: 10%;
 }
 
@@ -141,7 +152,7 @@ h1 {
 
 @media (width<1280px) {
     h1 {
-        font-size: clamp(1.5rem, 0.07142857142857162rem + 7.142857142857142vw, 6.5rem);
+        font-size: clamp(1.3rem, 0.07142857142857162rem + 7.142857142857142vw, 6.5rem);
         position: absolute;
         top: 11rem;
         right: 7.6rem;
@@ -152,6 +163,7 @@ h1 {
     .nav-links {
         gap: 0;
     }
+
 }
 
 @media (width>850px) {
@@ -175,8 +187,19 @@ h1 {
 
 @media (width <850px) {
 
+    .desktop-nav {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .logo {
+        height: 5rem;
+    }
+
+
     .c-open-menu {
         color: var(--color-primary-text);
+        top: 2.5rem;
     }
 
     .nav-links a {
@@ -268,6 +291,14 @@ h1 {
     #check:checked~.nav-links {
         right: 0%;
     }
+
+    h1 {
+        top: 7rem;
+    }
+
+    .bg-yellow-top-left {
+        height: 13rem;
+    }
 }
 
 @media (width<777px) {
@@ -284,18 +315,30 @@ h1 {
 
     .c-open-menu,
     .c-close-menu {
-        top: 3rem;
         font-size: 1.5rem;
     }
 
     h1 {
-        top: 8rem;
+        top: 7rem;
         right: 15%;
     }
 }
 
 @media (width<600px) {
-    .desktop-nav {
-        padding: 2rem 4rem 2rem 1.3rem;
+
+    .bg-yellow-top-left {
+        height: 11rem;
+    }
+
+    h1 {
+        top: 7rem;
+        right: 15%;
+    }
+}
+
+@media (30px <=width <=450px) {
+
+    .bg-yellow-top-left {
+        height: 9.5rem;
     }
 }
