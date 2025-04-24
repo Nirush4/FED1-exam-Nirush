@@ -144,6 +144,104 @@
     }
 }
 
+.gallery-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5rem;
+
+
+    h2 {
+        font-family: "Italiana", sans-serif;
+        font-size: clamp(1.1rem, 0.32000000000000006rem + 3.9vw, 5rem);
+        letter-spacing: 1px;
+        font-weight: 500;
+        padding-bottom: 2.5rem;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px;
+        padding: 10px;
+
+        .gallery-item {
+            width: 100%;
+            height: auto;
+
+            img {
+                border-radius: 1rem;
+                height: 100%;
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+
+    .item-1 {
+        grid-column: span 1;
+        grid-row: span 2;
+
+        :hover {
+            transition: all 0.3s ease-in-out;
+            scale: 97%;
+        }
+    }
+
+    .item-2 {
+        grid-column: span 2;
+        grid-row: span 3;
+
+        :hover {
+            transition: all 0.3s ease-in-out;
+            scale: 97%;
+        }
+    }
+
+
+    .item-3 {
+        grid-column: span 2;
+        grid-row: span 3;
+
+        :hover {
+            transition: all 0.3s ease-in-out;
+            scale: 97%;
+        }
+    }
+
+    .item-3 {
+        grid-column: span 1;
+        grid-row: span 2;
+
+        :hover {
+            transition: all 0.3s ease-in-out;
+            scale: 97%;
+        }
+    }
+
+    .item-4 {
+        grid-column: span 1;
+        grid-row: span 1;
+
+        :hover {
+            transition: all 0.3s ease-in-out;
+            scale: 97%;
+        }
+    }
+
+    .item-5 {
+        grid-column: span 1;
+        grid-row: span 1;
+
+        :hover {
+            transition: all 0.3s ease-in-out;
+            scale: 97%;
+        }
+    }
+}
+
+
 @media (width<999px) {
 
     .hero-section-div .img-div {
@@ -208,9 +306,41 @@
         .left-content-text-div p {
             padding-bottom: 1.2rem;
         }
+
+        .left-content-text-div p:last-child {
+            padding-bottom: 0;
+        }
     }
 
     .what-you-can-expect .right-content-text-div p {
         padding-bottom: 1.2rem;
+    }
+
+    .gallery-section {
+        padding-bottom: 2rem;
+
+        h2 {
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    .gallery-section .gallery-grid {
+        padding: 0;
+        gap: 5px;
+
+        .gallery-item img {
+            border-radius: 0;
+        }
+
+    }
+
+    .gallery-section .gallery-grid .item-1,
+    .item-2,
+    .item-3,
+    .item-4,
+    .item-5 {
+        :hover {
+            scale: 100%;
+        }
     }
 }
