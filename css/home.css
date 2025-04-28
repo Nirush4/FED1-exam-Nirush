@@ -26,6 +26,7 @@
             width: 100%;
             height: auto;
             display: block;
+            object-fit: cover;
         }
     }
 }
@@ -286,6 +287,20 @@
 }
 
 @media (width <600px) {
+    .hero-section-div {
+        min-height: 20rem;
+
+        .img-div {
+            min-height: 20rem;
+
+            img {
+                min-height: 20rem;
+                object-fit: cover;
+            }
+        }
+    }
+
+
     .what-you-can-expect {
         gap: 1.5rem;
 
