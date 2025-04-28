@@ -1,0 +1,152 @@
+@import url(/css/common-css.css);
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+
+.blog {
+    color: var(--color-primary-text) !important;
+}
+
+.main-carousel-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: auto;
+    width: 100%;
+    position: relative;
+    background-color: var(--color-primary);
+}
+
+.carousel-container {
+    display: flex;
+    width: 95%;
+    height: auto;
+}
+
+.img-container {
+    width: 100%;
+
+    .carousel-title-div {
+        background-color: rgba(0, 0, 0, .5);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 95%;
+
+
+        h2 {
+            color: #FFFFFF;
+            font-family: "Forum", serif;
+            margin-left: 9%;
+            padding-top: 0.7%;
+            font-size: clamp(1.5rem, 0.6000000000000001rem + 4.5vw, 6rem);
+        }
+
+        h3 {
+            color: #FFFFFF;
+            font-family: "Forum", serif;
+            font-weight: 400;
+            margin-left: 9%;
+            padding: 0 0 1%;
+            font-size: clamp(1.3rem, 0.76rem + 2.7vw, 4rem);
+        }
+    }
+}
+
+.slider-img {
+    display: none;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.first-img {
+    display: block;
+}
+
+.slider-button {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    margin: 8%;
+    padding: 0.5rem 1.25rem;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.203);
+    align-self: center;
+    border: transparent;
+    cursor: pointer;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+}
+
+.slider-button:hover {
+    background-color: rgba(255, 255, 255, 0.496);
+}
+
+#next {
+    right: 0;
+}
+
+.fade {
+    animation: fade-transition 0.2s ease-in;
+}
+
+@keyframes fade-transition {
+    from {
+        opacity: 0.7;
+
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (width<999px) {
+
+    .main-carousel-container .carousel-container {
+        width: 100%;
+
+        .img-container .carousel-title-div {
+            left: 0;
+            width: 100%;
+        }
+
+    }
+
+}
+
+@media (width <850px) {
+    .slider-button {
+        font-size: 1.5rem;
+        padding: 0.5rem 0.9rem;
+    }
+
+}
+
+@media (width <600px) {
+    .slider-button {
+        font-size: 1.2rem;
+        padding: 0.3rem 0.65rem;
+    }
+
+    .carousel-container {
+        min-height: 20rem;
+
+        .img-container {
+            min-height: 20rem;
+
+            img {
+                min-height: 20rem;
+            }
+        }
+
+    }
+
+}
+
+@media (width <450px) {
+
+
+    .slider-button {
+        font-size: 1.2rem;
+        padding: 0.3rem 0.65rem;
+    }
+
+}
