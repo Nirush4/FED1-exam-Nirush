@@ -288,13 +288,13 @@
 
 @media (width <600px) {
     .hero-section-div {
-        min-height: 20rem;
+        min-height: 25rem;
 
         .img-div {
-            min-height: 20rem;
+            min-height: 25rem;
 
             img {
-                min-height: 20rem;
+                min-height: 25rem;
                 object-fit: cover;
             }
         }
