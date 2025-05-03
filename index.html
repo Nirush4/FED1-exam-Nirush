@@ -14,7 +14,6 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css'
         integrity='sha512-GmZYQ9SKTnOea030Tbiat0Y+jhnYLIpsGAe6QTnToi8hI2nNbVMETHeK4wm4MuYMQdrc38x+sX77+kVD01eNsQ=='
         crossorigin='anonymous' />
-    <!-- <script type="module" src="/js/carousel.mjs" defer></script> -->
     <script type="module" src="/js/index.mjs" defer></script>
 
 </head>
@@ -77,7 +76,26 @@
             <div class="blog-text-div">
                 <h2 class="blog-text">Blog</h2>
                 <h2 class="blog-post-md">Blog Post</h2>
+                <div class="filter-sorting-search">
+                    <select id="sort-filter">
+                        <option value="none">Sort by Date</option>
+                        <option value="latest">Latest</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
+
+                    <select id="sort-title">
+                        <option value="none">Sort by Title</option>
+                        <option value="title-asc">A - Z</option>
+                        <option value="title-desc">Z - A</option>
+                    </select>
+
+                    <div class="search" id="search" aria-label="search">
+                        <input type="text" aria-label="Search" id="search-bar" placeholder="Search...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
             </div>
+
             <div class="blog-list-container">
                 <div class="post-text-div">
                     <h2>Post</h2>
@@ -85,6 +103,13 @@
                 <div class="blog-post-list-container" id="blog-container">
                 </div>
             </div>
+
+            <div id="pagination-container">
+                <button class="pagination-btn" id="prev-btn" disabled>&laquo; Previous</button>
+                <span id="page-number"></span>
+                <button class="pagination-btn" id="next-btn">Next &raquo;</button>
+            </div>
+
 
         </section>
 
