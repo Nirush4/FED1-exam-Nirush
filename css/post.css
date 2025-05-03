@@ -7,6 +7,40 @@
     color: var(--color-primary-text) !important;
 }
 
+#carousel-skeleton-container {
+    width: 100%;
+    height: 45rem;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(90deg, #6f6a5ba8 25%, #35332aa8 50%, #6f6a5ba8 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite linear;
+}
+
+@keyframes loading {
+    to {
+        background-position: -200% 0;
+    }
+}
+
+
+
+.skeleton-title-div {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2% 9%;
+}
+
+.skeleton-title-line {
+    width: 100%;
+    background-color: #ddddddc8;
+    padding: 4% 8%;
+    border-radius: 0.5rem;
+}
+
 .main-carousel-container {
     display: flex;
     justify-content: flex-end;
@@ -94,6 +128,7 @@
     }
 }
 
+
 @media (width<999px) {
 
     .main-carousel-container .carousel-container {
@@ -112,6 +147,10 @@
     .slider-button {
         font-size: 1.5rem;
         padding: 0.5rem 0.9rem;
+    }
+
+    #carousel-skeleton-container {
+        height: 38rem;
     }
 
 }
@@ -134,6 +173,10 @@
             }
         }
 
+    }
+
+    #carousel-skeleton-container {
+        height: 25rem;
     }
 
 }
@@ -383,6 +426,76 @@
     }
 }
 
+.blog-skeleton {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
+    gap: 2rem;
+    width: 22rem;
+    height: 32rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 1rem #00000080;
+    background: linear-gradient(90deg, #6f6a5ba8 25%, #35332aa8 50%, #6f6a5ba8 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite linear;
+
+    .image,
+    .title,
+    .text,
+    .button {
+        background: #ddddddc8;
+        border-radius: 0.25rem;
+    }
+
+    .image {
+        width: 90%;
+        height: 16rem;
+        margin-top: 1.5rem;
+    }
+
+    .title {
+        width: 90%;
+        height: 1.25rem;
+    }
+
+    .text {
+        width: 90%;
+        height: 3.75rem;
+    }
+
+    .button {
+        width: 35%;
+        height: 2.2rem;
+        align-self: flex-start;
+        margin-left: 2rem;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes loading {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
 
 @media (width<900px) {
     .blog-main-container {
@@ -464,5 +577,9 @@
                 }
             }
         }
+    }
+
+    .blog-skeleton {
+        width: 17rem;
     }
 }

@@ -5,6 +5,9 @@ const containerEl = document.querySelector('#blog-container');
 const sortFilterEl = document.getElementById('sort-filter');
 const sortTitleEl = document.getElementById('sort-title');
 const searchBarEl = document.getElementById('search-bar');
+const skeletonContainer = document.getElementById(
+  'carousel-skeleton-container'
+);
 
 const fetchblogs = 'https://v2.api.noroff.dev/blog/posts/Nirush/';
 let allPosts = [];
@@ -12,30 +15,11 @@ let currentPage = 1;
 const postsPerPage = 9;
 let filteredPosts = [];
 
-const paginationContainer = document.createElement('div');
-paginationContainer.id = 'pagination-container';
-
-const prevButton = document.createElement('button');
-prevButton.classList.add('pagination-btn');
-prevButton.id = 'prev-btn';
-prevButton.innerHTML = '&laquo; Previous';
-prevButton.disabled = true;
-
-const pageNumberSpan = document.createElement('span');
-pageNumberSpan.id = 'page-number';
-pageNumberSpan.textContent = 'Page 1 of 1';
-
-const nextButton = document.createElement('button');
-nextButton.classList.add('pagination-btn');
-nextButton.id = 'next-btn';
-nextButton.innerHTML = 'Next &raquo;';
-
-paginationContainer.append(prevButton, pageNumberSpan, nextButton);
-document.body.appendChild(paginationContainer);
-
 fetchPosts();
 
 export async function fetchPosts() {
+  if (skeletonContainer) skeletonContainer.style.display = 'block';
+  showSkeletons(12);
   try {
     const response = await fetch(fetchblogs);
     if (!response.ok) throw new Error('Error fetching blog posts');
@@ -46,9 +30,25 @@ export async function fetchPosts() {
     handleFilters();
   } catch (error) {
     console.error('Error fetching posts:', error);
+  } finally {
+    if (skeletonContainer) skeletonContainer.style.display = 'none';
   }
 }
 
+function showSkeletons(count) {
+  containerEl.innerHTML = '';
+  for (let i = 0; i < count; i++) {
+    const skeleton = document.createElement('div');
+    skeleton.className = 'blog-skeleton';
+    skeleton.innerHTML = `
+      <div class="image"></div>
+      <div class="title"></div>
+      <div class="text"></div>
+      <div class="button"></div>
+    `;
+    containerEl.appendChild(skeleton);
+  }
+}
 function blogPostTemplate({ id, title, body, media }) {
   const detailsUrl = `/single/index?id=${id}`;
   const trimmedBody = body.length > 100 ? body.slice(0, 100) + '...' : body;
