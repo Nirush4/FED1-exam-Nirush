@@ -400,6 +400,7 @@ h1 {
             width: 100%;
             height: auto;
             min-height: 7rem;
+            padding-left: 2rem;
 
 
             input {
@@ -475,6 +476,10 @@ h1 {
         .footer-column-3 {
             align-items: flex-start;
             border-right: none;
+        }
+
+        .footer-column-4 {
+            padding-left: 0;
         }
     }
 
