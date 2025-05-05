@@ -14,7 +14,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css'
         integrity='sha512-GmZYQ9SKTnOea030Tbiat0Y+jhnYLIpsGAe6QTnToi8hI2nNbVMETHeK4wm4MuYMQdrc38x+sX77+kVD01eNsQ=='
         crossorigin='anonymous' />
-
+    <script type="module" src="/js/index.mjs" defer></script>
 
 </head>
 
@@ -40,8 +40,8 @@
                 </li>
 
                 <ul class="nav-login-register">
-                    <li><a href="/Login.html" aria-label="login" class="log-in account">Log in</a></li>
-                    <li><a href="/register.html" aria-label="register" class="register account">Register</a></li>
+                    <li><a href="account/login.html" aria-label="login" class="log-in account">Log in</a></li>
+                    <li><a href="account/register.html" aria-label="register" class="register account">Register</a></li>
                 </ul>
 
                 <label for="check" class="c-close-menu">
@@ -61,93 +61,83 @@
         <section class="main-carousel-container">
             <div class="carousel-container" id="carousel-container-el">
 
-                <!-- <div class="img-container">
-                    <img src="/image/blog/carousel/img1.jpg"
-                        alt="A man taking a photo with a camera, focused on capturing the scene in front of him."
-                        class="slider-img fade first-img">
-                    <div class="carousel-title-div">
-                        <h2>Capturing the World:</h2>
-                        <h3>A Beginner's Photography Guide to Traveling</h3>
+                <div id="carousel-skeleton-container">
+                    <div class="carousel-title-div skeleton-title-div">
+                        <div class="skeleton-title-line"></div>
                     </div>
                 </div>
-                <div class="img-container">
-                    <img src="/image/blog/carousel/img2.jpg"
-                        alt="A neatly arranged collection of professional camera gear."
-                        class="slider-img fade first-img">
-                    <div class="carousel-title-div">
-                        <h2>The Ultimate Gear Guide for</h2>
-                        <h3>Travel Photographers:</h3>
-                    </div>
-                </div>
-                <div class="img-container">
-                    <img src="/image/blog/carousel/img3.jpg"
-                        alt="A beautifull sunrise over the ocean, with golden light reflecting on gentle waves."" class="
-                        slider-img fade first-img">
-                    <div class="carousel-title-div">
-                        <h2>How to Capture</h2>
-                        <h3>Stunning Sunrise and Sunset Photos While Traveling</h3>
-                    </div>
-                </div> -->
+                <button type="button" class="slider-button" aria-label="left slider arrow" id="prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
 
-                <button type="button" class="slider-button" id="prev"><i class="fa-solid fa-chevron-left"></i></button>
-                <button type="button" class="slider-button" id="next"><i class="fa-solid fa-chevron-right"></i></button>
+                <div id="carousel-content-el"></div>
+
+                <button type="button" class="slider-button" aria-label="right slider arrow" id="next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
         </section>
+
         <section class="blog-main-container">
             <div class="blog-text-div">
-                <h2>Blog</h2>
+                <h2 class="blog-text">Blog</h2>
+                <h2 class="blog-post-md">Blog Post</h2>
+                <div class="filter-sorting-search">
+                    <select id="sort-filter">
+                        <option value="none">Sort by Date</option>
+                        <option value="latest">Latest</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
+
+                    <select id="sort-title">
+                        <option value="none">Sort by Title</option>
+                        <option value="title-asc">A - Z</option>
+                        <option value="title-desc">Z - A</option>
+                    </select>
+
+                    <div class="search" id="search" aria-label="search">
+                        <input type="text" aria-label="Search" id="search-bar" placeholder="Search...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
             </div>
+
             <div class="blog-list-container">
                 <div class="post-text-div">
                     <h2>Post</h2>
                 </div>
-                <div class="blog-post-list-container">
-                    <div class="blog-list">
-                        <img src="/image/blog/carousel/img1.jpg"
-                            alt="A man taking a photo with a camera, focused on capturing the scene in front of him.">
-                        <h3>Capturing the World: A Beginner's
-                            Photography Guide to Traveling</h3>
-                        <p>Travel photography is not just a pastime — it is a way of recording the world, of keeping
-                            memories, and of sharing the
-                            loveliness of varied cultures, landscapes, and moments with other people.</p>
-                        <button><a href="">Lean more...</a></button>
-                    </div>
-                    <div class="blog-list">
-                        <img src="/image/blog/carousel/img2.jpg"
-                            alt="A neatly arranged collection of professional camera gear.">
-                        <h3>The Ultimate Gear Guide for
-                            Travel Photographers:</h3>
-                        <p>A comprehensive post on what gear is essential for travel photographers. Cover cameras,
-                            lenses,
-                            tripods, drones, and
-                            accessories for different types of photography (landscapes, street, portraits, etc.).</p>
-                        <button><a href="">Lean more...</a></button>
-                    </div>
-                    <div class="blog-list">
-                        <img src="/image/blog/carousel/img3.jpg"
-                            alt="A beautifull sunrise over the ocean, with golden light reflecting on gentle waves.">
-                        <h3>Capturing the World: A Beginner's
-                            Photography Guide to Traveling</h3>
-                        <p>Whether you're capturing the icy peaks of the Himalayas or the bustling street life of
-                            Marrakech,
-                            the right gear can
-                            make or break your travel photography experience.</p>
-                        <button><a href="">Lean more...</a></button>
-                    </div>
-                    <div class="blog-list">
-                        <img src="/image/blog/carousel/img3.jpg"
-                            alt="A beautifull sunrise over the ocean, with golden light reflecting on gentle waves.">
-                        <h3>Capturing the World: A Beginner's
-                            Photography Guide to Traveling</h3>
-                        <p>Whether you're capturing the icy peaks of the Himalayas or the bustling street life of
-                            Marrakech,
-                            the right gear can
-                            make or break your travel photography experience.</p>
-                        <button><a href="">Lean more...</a></button>
-                    </div>
+                <div class="blog-post-list-container" id="blog-container">
                 </div>
             </div>
 
+            <div id="pagination-container">
+                <button class="pagination-btn" id="prev-btn" disabled>&laquo; Previous</button>
+                <span id="page-number"></span>
+                <button class="pagination-btn" id="next-btn">Next &raquo;</button>
+            </div>
+
+        </section>
+
+        <section class="gallery-section">
+
+            <h2>Gallery</h2>
+
+            <div class="gallery-grid">
+                <div class="gallery-item item-1">
+                    <img src="/image/home/gallery/image1.jpg" alt="A person capturing a photograph.">
+                </div>
+                <div class="gallery-item item-2">
+                    <img src="/image/home/gallery/image3.jpg" alt="A photograph of a vehicle.">
+                </div>
+                <div class="gallery-item item-3">
+                    <img src="/image/home/gallery/image4.jpg" alt="A photograph of a dog.">
+                </div>
+                <div class="gallery-item item-4">
+                    <img src="/image/home/gallery/image2.jpg" alt="A photograph of a person exploring a waterfall.">
+                </div>
+                <div class="gallery-item item-5">
+                    <img src="/image/home/gallery/image5.jpg" alt="A photograph of a person exploring a waterfall.">
+                </div>
         </section>
 
 
@@ -194,6 +184,6 @@
             <p>Designed & Made with ❤️ by <strong>Nirush</strong></p>
         </div>
     </footer>
-    <!-- <script type="module" src="/js/carousel.mjs" defer></script>
-    <script type="module" src="/js/index.mjs" defer></script> -->
 </body>
+
+</html>
