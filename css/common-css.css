@@ -7,7 +7,7 @@
     --color-secondary: #4E4B40;
     --color-tertiary: #6D6658;
     --color-primary-text: #254F58;
-    --color-secondary-text: #8BBDBC;
+    --color-secondary-text: #599291;
     --color-dark-text: #112D31;
     --background-color-addbtn-hover: #b5b5b5;
 }
@@ -78,10 +78,6 @@ header {
 .logo {
     height: 7rem;
     width: auto;
-    /* position: absolute;
-    top: 3rem;
-    left: 4rem;
-    z-index: 200; */
 }
 
 .logo img {
@@ -188,6 +184,84 @@ h1 {
 
 #check {
     display: none;
+}
+
+/* IMP! GALLERY SECTION */
+
+.gallery-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5rem;
+
+
+    h2 {
+        font-family: "Italiana", sans-serif;
+        font-size: clamp(1.1rem, 0.32000000000000006rem + 3.9vw, 5rem);
+        letter-spacing: 1px;
+        font-weight: 500;
+        padding-bottom: 2.5rem;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px;
+        padding: 10px;
+
+        .gallery-item {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+
+            img {
+                height: 100%;
+                width: 100%;
+                display: block;
+            }
+
+            :hover {
+                transition: all 0.3s ease-in-out;
+                scale: 103%;
+            }
+        }
+    }
+
+    .item-1 {
+        grid-column: span 1;
+        grid-row: span 2;
+
+    }
+
+    .item-2 {
+        grid-column: span 2;
+        grid-row: span 3;
+    }
+
+
+    .item-3 {
+        grid-column: span 2;
+        grid-row: span 3;
+
+    }
+
+    .item-3 {
+        grid-column: span 1;
+        grid-row: span 2;
+
+    }
+
+    .item-4 {
+        grid-column: span 1;
+        grid-row: span 1;
+
+    }
+
+    .item-5 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
 }
 
 /* imp! FOOTER */
@@ -578,6 +652,35 @@ h1 {
     h1 {
         top: 7rem;
         right: 15%;
+    }
+
+    .gallery-section {
+        padding-bottom: 2rem;
+
+        h2 {
+            padding-bottom: 1.5rem;
+            font-weight: 600;
+        }
+    }
+
+    .gallery-section .gallery-grid {
+        padding: 0;
+        gap: 5px;
+
+        .gallery-item img {
+            border-radius: 0;
+        }
+
+    }
+
+    .gallery-section .gallery-grid .item-1,
+    .item-2,
+    .item-3,
+    .item-4,
+    .item-5 {
+        :hover {
+            scale: 100%;
+        }
     }
 
     .footer {
