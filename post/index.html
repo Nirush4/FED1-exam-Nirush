@@ -5,16 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="Lens of Wanderlust">
+    <title>Blog / Lens of Wanderlust</title>
     <meta name="description"
         content="Welcome to our travel photography blog community! Here is a place where travelers, photographers, and creative souls from all around the world come together to share experiences, tell their stories, and stunning images. Whether you are an amateur, a professional, or simply someone who loves to soak up the wonder of the world, you are welcome to join our dynamic, interactive community." />
     <meta name="robots" content="index, follow">
     <link rel="shortcut icon" href="/image/favicon.png" type="image/x-icon">
-    <link href="/css/blog.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css'
         integrity='sha512-GmZYQ9SKTnOea030Tbiat0Y+jhnYLIpsGAe6QTnToi8hI2nNbVMETHeK4wm4MuYMQdrc38x+sX77+kVD01eNsQ=='
         crossorigin='anonymous' />
-    <script type="module" src="/js/blog.js" defer></script>
-    <title>Blog / Lens of Wanderlust</title>
+
 
 </head>
 
@@ -32,7 +32,7 @@
                     <a class="nav-item home" href="/home.html">Home</a>
                 </li>
                 <li role="blog" aria-label="blog">
-                    <a class="nav-item blog" href="/blog.html">Blog</a>
+                    <a class="nav-item blog" href="/index.html">Blog</a>
                 </li>
 
                 <li role=" aboutus">
@@ -59,33 +59,95 @@
     <main>
         <h1>Lens of Wanderlust</h1>
         <section class="main-carousel-container">
-            <div class="carousel-container">
+            <div class="carousel-container" id="carousel-container-el">
 
-                <div class="img-container">
-                    <img src="/image/blog/carousel/img1.jpg" alt="" class="slider-img fade first-img">
+                <!-- <div class="img-container">
+                    <img src="/image/blog/carousel/img1.jpg"
+                        alt="A man taking a photo with a camera, focused on capturing the scene in front of him."
+                        class="slider-img fade first-img">
                     <div class="carousel-title-div">
                         <h2>Capturing the World:</h2>
                         <h3>A Beginner's Photography Guide to Traveling</h3>
                     </div>
                 </div>
                 <div class="img-container">
-                    <img src="/image/blog/carousel/img2.jpg" alt="" class="slider-img fade first-img">
+                    <img src="/image/blog/carousel/img2.jpg"
+                        alt="A neatly arranged collection of professional camera gear."
+                        class="slider-img fade first-img">
                     <div class="carousel-title-div">
                         <h2>The Ultimate Gear Guide for</h2>
                         <h3>Travel Photographers:</h3>
                     </div>
                 </div>
                 <div class="img-container">
-                    <img src="/image/blog/carousel/img3.jpg" alt="" class="slider-img fade first-img">
+                    <img src="/image/blog/carousel/img3.jpg"
+                        alt="A beautifull sunrise over the ocean, with golden light reflecting on gentle waves."" class="
+                        slider-img fade first-img">
                     <div class="carousel-title-div">
                         <h2>How to Capture</h2>
                         <h3>Stunning Sunrise and Sunset Photos While Traveling</h3>
                     </div>
-                </div>
+                </div> -->
 
                 <button type="button" class="slider-button" id="prev"><i class="fa-solid fa-chevron-left"></i></button>
                 <button type="button" class="slider-button" id="next"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
+        </section>
+        <section class="blog-main-container">
+            <div class="blog-text-div">
+                <h2>Blog</h2>
+            </div>
+            <div class="blog-list-container">
+                <div class="post-text-div">
+                    <h2>Post</h2>
+                </div>
+                <div class="blog-post-list-container">
+                    <div class="blog-list">
+                        <img src="/image/blog/carousel/img1.jpg"
+                            alt="A man taking a photo with a camera, focused on capturing the scene in front of him.">
+                        <h3>Capturing the World: A Beginner's
+                            Photography Guide to Traveling</h3>
+                        <p>Travel photography is not just a pastime — it is a way of recording the world, of keeping
+                            memories, and of sharing the
+                            loveliness of varied cultures, landscapes, and moments with other people.</p>
+                        <button><a href="">Lean more...</a></button>
+                    </div>
+                    <div class="blog-list">
+                        <img src="/image/blog/carousel/img2.jpg"
+                            alt="A neatly arranged collection of professional camera gear.">
+                        <h3>The Ultimate Gear Guide for
+                            Travel Photographers:</h3>
+                        <p>A comprehensive post on what gear is essential for travel photographers. Cover cameras,
+                            lenses,
+                            tripods, drones, and
+                            accessories for different types of photography (landscapes, street, portraits, etc.).</p>
+                        <button><a href="">Lean more...</a></button>
+                    </div>
+                    <div class="blog-list">
+                        <img src="/image/blog/carousel/img3.jpg"
+                            alt="A beautifull sunrise over the ocean, with golden light reflecting on gentle waves.">
+                        <h3>Capturing the World: A Beginner's
+                            Photography Guide to Traveling</h3>
+                        <p>Whether you're capturing the icy peaks of the Himalayas or the bustling street life of
+                            Marrakech,
+                            the right gear can
+                            make or break your travel photography experience.</p>
+                        <button><a href="">Lean more...</a></button>
+                    </div>
+                    <div class="blog-list">
+                        <img src="/image/blog/carousel/img3.jpg"
+                            alt="A beautifull sunrise over the ocean, with golden light reflecting on gentle waves.">
+                        <h3>Capturing the World: A Beginner's
+                            Photography Guide to Traveling</h3>
+                        <p>Whether you're capturing the icy peaks of the Himalayas or the bustling street life of
+                            Marrakech,
+                            the right gear can
+                            make or break your travel photography experience.</p>
+                        <button><a href="">Lean more...</a></button>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
 
@@ -100,7 +162,7 @@
             </div>
             <div class="footer-column-2">
                 <div class="footer-column-2-left">
-                    <a href="/home.html">Home</a><a href="/blog.html">Blog</a><a href="/about.html">About</a>
+                    <a href="/home.html">Home</a><a href="/index.html">Blog</a><a href="/about.html">About</a>
                 </div>
                 <div class="footer-column-2-right">
                     <a href="/home.html">Terms</a><a href="/home.html">Privacy</a>
@@ -132,4 +194,6 @@
             <p>Designed & Made with ❤️ by <strong>Nirush</strong></p>
         </div>
     </footer>
+    <!-- <script type="module" src="/js/carousel.mjs" defer></script>
+    <script type="module" src="/js/index.mjs" defer></script> -->
 </body>

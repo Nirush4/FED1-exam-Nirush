@@ -5,15 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="Lens of Wanderlust">
-    <title>Home / Lens of Wanderlust</title>
+    <title>Blog / Lens of Wanderlust</title>
     <meta name="description"
         content="Welcome to our travel photography blog community! Here is a place where travelers, photographers, and creative souls from all around the world come together to share experiences, tell their stories, and stunning images. Whether you are an amateur, a professional, or simply someone who loves to soak up the wonder of the world, you are welcome to join our dynamic, interactive community." />
     <meta name="robots" content="index, follow">
     <link rel="shortcut icon" href="/image/favicon.png" type="image/x-icon">
-    <link href="/css/home.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css'
         integrity='sha512-GmZYQ9SKTnOea030Tbiat0Y+jhnYLIpsGAe6QTnToi8hI2nNbVMETHeK4wm4MuYMQdrc38x+sX77+kVD01eNsQ=='
         crossorigin='anonymous' />
+    <script type="module" src="/js/index.mjs" defer></script>
 
 </head>
 
@@ -23,7 +24,7 @@
         <div class="bg-yellow-top-left"></div>
 
         <nav class="desktop-nav">
-            <a class="logo" href="/"><img src="/image/logo.png" alt="Logo"></a>
+            <a class="logo" href="/home.html"><img src="/image/logo.png" alt="Logo"></a>
 
             <input type="checkbox" id="check">
             <div class="nav-links">
@@ -57,88 +58,64 @@
 
     <main>
         <h1>Lens of Wanderlust</h1>
-        <section class="hero-section-div">
-            <div class="img-div">
-                <img src="/image/home/hero-img.jpg" alt="A photograph of a squirrel">
+        <section class="main-carousel-container">
+            <div class="carousel-container" id="carousel-container-el">
+
+                <div id="carousel-skeleton-container">
+                    <div class="carousel-title-div skeleton-title-div">
+                        <div class="skeleton-title-line"></div>
+                    </div>
+                </div>
+                <button type="button" class="slider-button" id="prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div id="carousel-content-el"></div>
+
+                <button type="button" class="slider-button" id="next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
         </section>
 
-        <section class="hero-section-text">
-            <h2>Welcome to the Lens of Wanderlust Blog</h2>
-            <p>Welcome to our travel photography blog community! Here is a place where travelers, photographers, and
-                creative souls
-                from all around the world come together to share experiences, tell their stories, and stunning images.
-                Whether you are
-                an amateur, a professional, or simply someone who loves to soak up the wonder of the world, you are
-                welcome to join our
-                dynamic, interactive community.</p>
-            <p>
-                This website is dedicated to the sharing of worldwide diversity in photographs. We hope to believe that
-                everyone has a
-                unique perspective to offer, and we're enthusiastic about showing you the beauty of our travels
-                throughout the world.
-                This site is not as much about what we do, about us but about YOU! If you are a traveler chronicling
-                your trip, or a
-                photographer sharing your next collection of tips and tricks, this is your home where you can make a
-                difference.
-            </p>
-        </section>
+        <section class="blog-main-container">
+            <div class="blog-text-div">
+                <h2 class="blog-text">Blog</h2>
+                <h2 class="blog-post-md">Blog Post</h2>
+                <div class="filter-sorting-search">
+                    <select id="sort-filter">
+                        <option value="none">Sort by Date</option>
+                        <option value="latest">Latest</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
 
-        <section class="what-you-can-expect">
-            <div class="left-img-div">
-                <img src="/image/home/what-you-can-expect.jpg" alt="A photography of boat floating on a calm river">
-            </div>
-            <div class="right-content-text-div">
-                <h3>What You Can Expect:</h3>
-                <p><strong>Inspiring Photography:</strong> Find breathtaking photos captured by photographers worldwide,
-                    from famous
-                    landmarks to hidden
-                    treasures.</p>
-                <p>
-                    <strong>Personal Travel Stories:</strong> Read the stories and experiences behind these
-                    photos introductions to different
-                    cultures,
-                    landscapes, and moments.
-                </p>
-                <p>
-                    <strong>Photography Tips & Techniques:</strong> Learn tips and lessons from other photographers and
-                    travelers who are willing to share their experience to make yours
-                    better.
-                </p>
-                <p>
-                    <strong>Open Platform for Contributors:</strong> If you enjoy travel and photography, you are
-                    welcome to
-                    contribute your own blogs and share your own perspective with
-                    our community.
-                </p>
-            </div>
-        </section>
+                    <select id="sort-title">
+                        <option value="none">Sort by Title</option>
+                        <option value="title-asc">A - Z</option>
+                        <option value="title-desc">Z - A</option>
+                    </select>
 
-        <section class="share-your-story">
-            <div class="left-content-text-div">
-                <h3>Share Your Story</h3>
-                <p>
-                    We believe in the power of collaboration, and anyone with a love for travel photography is welcome
-                    to contribute. If you
-                    have an inspiring story, photography tips, or a collection of beautiful images from your travels,
-                    we'd love for you to
-                    share them with our community. Whether you're just starting out or you're an experienced
-                    photographer, this platform is
-                    here to amplify your voice and celebrate your creativity.
-                </p>
-                <p>
-                    Join us in building a global archive of travel stories and photography that inspires, educates, and
-                    connects people from
-                    all walks of life.
-                </p>
-                <p>
-                    Thank you for visiting, and we can't wait to see the world through your lens!
-                </p>
+                    <div class="search" id="search" aria-label="search">
+                        <input type="text" aria-label="Search" id="search-bar" placeholder="Search...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
             </div>
 
-            <div class="right-img-div">
-                <img src="/image/home/share-your-story.jpg" alt="A person capturing a photograph.">
+            <div class="blog-list-container">
+                <div class="post-text-div">
+                    <h2>Post</h2>
+                </div>
+                <div class="blog-post-list-container" id="blog-container">
+                </div>
             </div>
+
+            <div id="pagination-container">
+                <button class="pagination-btn" id="prev-btn" disabled>&laquo; Previous</button>
+                <span id="page-number"></span>
+                <button class="pagination-btn" id="next-btn">Next &raquo;</button>
+            </div>
+
         </section>
 
         <section class="gallery-section">
@@ -162,6 +139,8 @@
                     <img src="/image/home/gallery/image5.jpg" alt="A photograph of a person exploring a waterfall.">
                 </div>
         </section>
+
+
     </main>
 
     <footer class="footer">
@@ -206,3 +185,5 @@
         </div>
     </footer>
 </body>
+
+</html>
