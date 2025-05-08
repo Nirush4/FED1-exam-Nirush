@@ -1,14 +1,20 @@
 import { logInEndPoint } from './utils.mjs';
+import { displayUserNav } from './manage.mjs';
 
 const loginForm = document.querySelector('#login-form');
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
+const loader = document.getElementById('loader'); // Loader element reference
 
 loginForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  handleLogin();
+  loader.style.display = 'flex';
+
+  setTimeout(() => {
+    handleLogin();
+  }, 2000);
 
   async function handleLogin() {
     const enteredName = nameInput.value.trim();
@@ -41,20 +47,21 @@ loginForm.addEventListener('submit', (event) => {
 
       const responseData = await response.json();
 
-      localStorage.setItem('userToken', responseData.data.accessToken);
-      localStorage.setItem('userName', enteredName);
+      sessionStorage.setItem('userToken', responseData.data.accessToken);
+      sessionStorage.setItem('userName', enteredName);
+
+      displayUserNav(enteredName);
 
       if (enteredName === 'Nirush') {
         window.location.href = '../post/manage.html';
       } else {
-        window.location.href = '../index.html';
+        window.location.href = './login.html';
       }
     } catch (error) {
       console.error('Login error:', error);
       alert('Could not log in. Please check your email and password.');
     } finally {
-      // Optional: hide loading spinner here if you add one
-      // hideLoader();
+      loader.style.display = 'none';
     }
   }
 });
