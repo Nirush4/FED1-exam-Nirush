@@ -1,0 +1,61 @@
+.user-name {
+    color: var(--color-button-bg);
+}
+
+.create-new-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 7% 0;
+    background: var(--color-primary);
+
+    a {
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(1.2rem, 1.04rem + 0.8vw, 1.5rem);
+        border: transparent;
+        background-color: var(--color-button-bg);
+        color: #ffffff;
+        padding: 1% 1.5%;
+        border-radius: 0.6rem;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: #0056b3;
+            transform: scale(1.03);
+        }
+    }
+
+}
+
+#edit-delete-div {
+    display: flex !important;
+    justify-content: space-between !important;
+    padding-top: 1rem;
+
+    span {
+        background-color: #ffffff !important;
+        color: var(--color-primary-text);
+        border: transparent;
+        border-radius: 0.2rem;
+        transition: all 0.2s ease-in-out;
+        align-self: flex-start;
+        text-decoration: none;
+        padding: 0.2rem 1.2rem;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    span:first-child:hover {
+        color: #ffffff;
+        background-color: var(--color-button-bg) !important;
+    }
+
+    span:last-child:hover {
+        color: #ffffff;
+        background-color: #ff0000 !important;
+    }
+
+}

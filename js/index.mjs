@@ -2,6 +2,7 @@ import { createHTML } from './utils.mjs';
 import { setupCarousel } from './carousel.mjs';
 
 const containerEl = document.querySelector('#blog-container');
+const blogText = document.querySelector('.blog-text-div');
 const sortFilterEl = document.getElementById('sort-filter');
 const sortTitleEl = document.getElementById('sort-title');
 const searchBarEl = document.getElementById('search-bar');
@@ -9,7 +10,7 @@ const skeletonContainer = document.getElementById(
   'carousel-skeleton-container'
 );
 
-const fetchblogs = 'https://v2.api.noroff.dev/blog/posts/Nirush/';
+export const fetchblogs = 'https://v2.api.noroff.dev/blog/posts/Nirush/';
 let allPosts = [];
 let currentPage = 1;
 const postsPerPage = 9;
@@ -51,14 +52,30 @@ function showSkeletons(count) {
 }
 function blogPostTemplate({ id, title, body, media }) {
   const detailsUrl = `/single/index?id=${id}`;
+  const isManagePage = window.location.pathname.includes('manage');
   const trimmedBody = body.length > 100 ? body.slice(0, 100) + '...' : body;
 
   return `
-    <a href="${detailsUrl}" class="blog-list" aria-label="View post titled ${title}">
+    <a href="${detailsUrl}" class="blog-list" aria-label="View post titled ${title}" data-id="${id}">
       <img src="${media?.url}" alt="${media?.alt || 'Blog post image'}">
       <h3>${title}</h3>
       <p>${trimmedBody}</p>
       <button aria-label="Read more about ${title}">Learn more...</button>
+
+      ${
+        isManagePage
+          ? `
+        <div id="edit-delete-div">
+          <span class="edit-btn" data-id="${id}" aria-label="Edit post" role="button" tabindex="0">
+            Edit <i class="fa-solid fa-pen-to-square"></i>
+          </span>
+          <span class="delete-btn" data-id="${id}" aria-label="Delete post" role="button" tabindex="0">
+            Delete <i class="fa-solid fa-trash-can"></i>
+          </span>
+        </div>
+        `
+          : ''
+      }
     </a>
   `;
 }
@@ -134,6 +151,9 @@ function updatePaginationButtons() {
 
   const nextButton = document.getElementById('next-btn');
   nextButton.disabled = currentPage === totalPages;
+  nextButton.addEventListener('click', () => {
+    blogText.scrollIntoView();
+  });
 }
 
 sortFilterEl.addEventListener('change', handleFilters);
