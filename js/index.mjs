@@ -99,6 +99,7 @@ function createPostListEl(list = []) {
     containerEl.append(newEl);
   });
 
+  setupDeleteButtons();
   updatePaginationButtons();
 }
 
@@ -153,6 +154,46 @@ function updatePaginationButtons() {
   nextButton.disabled = currentPage === totalPages;
   nextButton.addEventListener('click', () => {
     blogText.scrollIntoView();
+  });
+}
+
+export function setupDeleteButtons() {
+  const deleteButtons = document.querySelectorAll('.delete-btn');
+  deleteButtons.forEach((button) => {
+    button.addEventListener('click', async (event) => {
+      event.preventDefault();
+      const postId = button.dataset.id;
+
+      const confirmDelete = confirm(
+        'Are you sure you want to delete this post?'
+      );
+      if (!confirmDelete) return;
+
+      try {
+        const token = sessionStorage.getItem('userToken');
+        const username = sessionStorage.getItem('userName');
+
+        const response = await fetch(
+          `https://v2.api.noroff.dev/blog/posts/${username}/${postId}`,
+          {
+            method: 'DELETE',
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        if (response.ok) {
+          allPosts = allPosts.filter((post) => post.id !== postId);
+          handleFilters();
+        } else {
+          throw new Error(`Failed to delete post. Status: ${response.status}`);
+        }
+      } catch (error) {
+        console.error('Error deleting post:', error);
+        alert('Failed to delete post. Please make sure you are logged in.');
+      }
+    });
   });
 }
 
