@@ -1,3 +1,5 @@
+import { displayUserNav } from './manage.mjs';
+
 const postForm = document.querySelector('#postForm');
 const titleInput = document.querySelector('#title');
 const contentInput = document.querySelector('#content');
@@ -5,6 +7,10 @@ const imageUrlInput = document.querySelector('#imageUrl');
 const imageAltInput = document.querySelector('#imageAlt');
 const tagsInput = document.querySelector('#tags');
 const messageDiv = document.querySelector('#message');
+
+const name = sessionStorage.getItem('userName');
+
+displayUserNav(name);
 
 postForm.addEventListener('submit', (event) => {
   event.preventDefault();

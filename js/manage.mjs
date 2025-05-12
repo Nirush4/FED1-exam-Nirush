@@ -1,5 +1,5 @@
 export function fetchToken() {
-  return localStorage.getItem('userToken');
+  return sessionStorage.getItem('userToken');
 }
 
 export function displayUserNav(enteredName) {
@@ -19,18 +19,13 @@ export function displayUserNav(enteredName) {
   }
 }
 
-export function userIsLoggedIn() {
-  const token = fetchToken();
-  return token !== null;
-}
-
 export function handleLogout() {
-  localStorage.removeItem('userToken');
-  localStorage.removeItem('userName');
+  sessionStorage.removeItem('userToken');
+  sessionStorage.removeItem('userName');
 }
 
 export function initLoginCheck() {
-  const name = localStorage.getItem('userName');
+  const name = sessionStorage.getItem('userName');
   displayUserNav(name);
 }
 
