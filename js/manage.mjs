@@ -14,17 +14,15 @@ export function displayUserNav(enteredName) {
 
     const logoutBtn = document.querySelector('#log-out');
     if (logoutBtn) {
-      logoutBtn.addEventListener('click', handleLogout);
+      logoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem('userToken');
+        sessionStorage.removeItem('userName');
+      });
     }
   }
 }
 
-export function handleLogout() {
-  sessionStorage.removeItem('userToken');
-  sessionStorage.removeItem('userName');
-}
-
-export function initLoginCheck() {
+function initLoginCheck() {
   const name = sessionStorage.getItem('userName');
   displayUserNav(name);
 }
