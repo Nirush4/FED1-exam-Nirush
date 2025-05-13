@@ -385,6 +385,7 @@
 
             .blog-list:hover {
                 background-color: var(--color-dark-text);
+                transform: translateY(-2%);
             }
         }
 

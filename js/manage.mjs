@@ -9,7 +9,7 @@ export function displayUserNav(enteredName) {
     if (enteredName) {
       navLinks.innerHTML = `Hello, <span class="user-name">${enteredName}</span>`;
     } else {
-      navLinks.innerHTML = `<a href="../account/login.html">Login</a> | <a href="../account/register.html">Sign Up</a>`;
+      navLinks.innerHTML = `<a href="../account/login.html">Login</a> `;
     }
 
     const logoutBtn = document.querySelector('#log-out');

@@ -6,7 +6,8 @@ let currentIndex = 0;
 let latestPosts = [];
 
 function createCarouselEl({ id, title, media }) {
-  const detailsUrl = `/single/index?id=${id}`;
+  const detailsUrl = `/post/single.html?id=${id}`;
+
   const imageUrl =
     media?.url || 'https://via.placeholder.com/600x400?text=No+Image';
   const altText = media?.alt || 'Blog post image';
