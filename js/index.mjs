@@ -51,7 +51,7 @@ function showSkeletons(count) {
   }
 }
 function blogPostTemplate({ id, title, body, media }) {
-  const detailsUrl = `/single/index?id=${id}`;
+  const detailsUrl = `/post/single.html?id=${id}`;
   const isManagePage = window.location.pathname.includes('manage');
   const trimmedBody = body.length > 100 ? body.slice(0, 100) + '...' : body;
 
