@@ -5,7 +5,7 @@ const loginForm = document.querySelector('#login-form');
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
-const loader = document.getElementById('loader'); // Loader element reference
+const loader = document.getElementById('loader');
 
 loginForm.addEventListener('submit', (event) => {
   event.preventDefault();

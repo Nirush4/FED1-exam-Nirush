@@ -100,6 +100,7 @@ function createPostListEl(list = []) {
   });
 
   setupDeleteButtons();
+  setupEditButtons();
   updatePaginationButtons();
 }
 
@@ -157,7 +158,20 @@ function updatePaginationButtons() {
   });
 }
 
-export function setupDeleteButtons() {
+function setupEditButtons() {
+  const editButtons = document.querySelectorAll('.edit-btn');
+  editButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      const postId = button.dataset.id;
+
+      localStorage.setItem('editPostId', postId);
+      window.location.href = `/post/edit.html`;
+    });
+  });
+}
+
+function setupDeleteButtons() {
   const deleteButtons = document.querySelectorAll('.delete-btn');
   deleteButtons.forEach((button) => {
     button.addEventListener('click', async (event) => {

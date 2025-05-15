@@ -69,7 +69,7 @@ async function handleCreatePost() {
     const responseData = await response.json();
 
     postForm.reset();
-    messageDiv.textContent = '✅ Post published successfully!';
+    messageDiv.textContent = 'Post published successfully!';
 
     if (username) {
       window.location.href = '../post/manage.html';
@@ -78,7 +78,7 @@ async function handleCreatePost() {
     }
   } catch (error) {
     console.error('Post creation error:', error);
-    alert('❌ Failed to publish post. Please check your input or login token.');
+    alert('Failed to publish post. Please check your input or login token.');
   } finally {
     loader.style.display = 'none';
   }
