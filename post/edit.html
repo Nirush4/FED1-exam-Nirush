@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Lens of Wanderlust">
+    <title>Create/Edit Post / Lens of Wanderlust</title>
+    <meta name="description"
+        content="Welcome to our travel photography blog community! Here is a place where travelers, photographers, and creative souls from all around the world come together to share experiences, tell their stories, and stunning images. Whether you are an amateur, a professional, or simply someone who loves to soak up the wonder of the world, you are welcome to join our dynamic, interactive community." />
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="/image/favicon.png" type="image/x-icon">
+    <link href="/css/create.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css'
+        integrity='sha512-GmZYQ9SKTnOea030Tbiat0Y+jhnYLIpsGAe6QTnToi8hI2nNbVMETHeK4wm4MuYMQdrc38x+sX77+kVD01eNsQ=='
+        crossorigin='anonymous' />
+    <script type="module" src="/js/edit.mjs" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="desktop-nav">
+            <a class="logo" href="/home.html"><img src="/image/logo.png" alt="Logo"></a>
+
+            <input type="checkbox" id="check">
+            <div class="nav-links">
+                <li role="home" aria-label="home">
+                    <a class="nav-item home" href="/home.html">Home</a>
+                </li>
+                <li role="blog" aria-label="blog">
+                    <a class="nav-item blog" href="/index.html">Blog</a>
+                </li>
+
+                <li role=" aboutus">
+                    <a class="nav-item about" href="/about.html">About</a>
+                </li>
+
+                <ul class="nav-login-register">
+                    <li><a href="" aria-label="login" class="log-in account" id="log-in">Log in</a>
+                    </li>
+                    <li><a href="../account/login.html" aria-label="register" class="register account" id="log-out">Log
+                            out</a></li>
+                </ul>
+
+                <label for="check" class="c-close-menu">
+                    <i class="fa-solid fa-x"></i>
+                </label>
+            </div>
+
+            <label for="check" class="c-open-menu">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+        </nav>
+    </header>
+
+    <main>
+        <span class="loader" id="loader"></span>
+
+        <div class="create-new-post-component">
+            <h2>Edit and Update Post</h2>
+
+            <form id="postForm">
+                <div>
+                    <label for="title">Post Title</label>
+                    <input type="text" id="title" name="title" required />
+                </div>
+
+                <div>
+                    <label for="content">Post Content</label>
+                    <textarea id="content" name="content" required maxlength="10000"></textarea>
+                </div>
+
+                <div>
+                    <label for="imageUrl">Image URL</label>
+                    <input type="url" id="imageUrl" name="imageUrl" required />
+                </div>
+
+                <div>
+                    <label for="imageAlt">Image Alt Text</label>
+                    <input type="text" id="imageAlt" name="imageAlt" />
+                </div>
+
+                <div>
+                    <label for="tags">Tags (separate by comma)</label>
+                    <input type="text" id="tags" name="tags" />
+                </div>
+
+                <input class="publish" type="submit" value="Publish" aria-label="Create or Update post">
+                <div class="message" id="message"></div>
+            </form>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-row-1">
+            <div class="footer-column-1">
+                <div class="footer-logo-div">
+                    <img src="/image/logo.png" alt="Logo">
+                </div>
+            </div>
+            <div class="footer-column-2">
+                <div class="footer-column-2-left">
+                    <a href="/home.html">Home</a><a href="/index.html">Blog</a><a href="/about.html">About</a>
+                </div>
+                <div class="footer-column-2-right">
+                    <a href="/home.html">Terms</a><a href="/home.html">Privacy</a>
+                </div>
+            </div>
+            <div class="footer-column-3">
+                <h4>Follow us at</h4>
+
+                <div class="footer-social-media-icons">
+                    <a href="https://www.facebook.com/" aria-label="facebook"><i
+                            class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.instagram.com/" aria-label="instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.pinterest.com/" aria-label="pinterest"><i
+                            class="fa-brands fa-pinterest"></i></a>
+                    <a href="https://x.com/" aria-label="x-twitter"> <i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com/" aria-label="youtube"> <i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <form action="" class="footer-column-4">
+                <input type="email" placeholder="Enter your email">
+                <input type="submit"></input>
+            </form>
+        </div>
+
+        </div>
+        <div class="footer-row-2">
+            <p>&copy; 2024 Lens of Wanderlust. All rights reserved. (This is a student project.).</p>
+            <p>Designed & Made with ❤️ by <strong>Nirush</strong></p>
+        </div>
+    </footer>
+</body>
+
+</html>
