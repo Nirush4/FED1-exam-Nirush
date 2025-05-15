@@ -5,21 +5,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="Lens of Wanderlust">
-    <title>Create/Edit Post / Lens of Wanderlust</title>
+    <title>Manage Blog / Lens of Wanderlust</title>
     <meta name="description"
         content="Welcome to our travel photography blog community! Here is a place where travelers, photographers, and creative souls from all around the world come together to share experiences, tell their stories, and stunning images. Whether you are an amateur, a professional, or simply someone who loves to soak up the wonder of the world, you are welcome to join our dynamic, interactive community." />
     <meta name="robots" content="index, follow">
     <link rel="shortcut icon" href="/image/favicon.png" type="image/x-icon">
-    <link href="/css/create.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
+    <link href="/css/manage.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css'
         integrity='sha512-GmZYQ9SKTnOea030Tbiat0Y+jhnYLIpsGAe6QTnToi8hI2nNbVMETHeK4wm4MuYMQdrc38x+sX77+kVD01eNsQ=='
         crossorigin='anonymous' />
-    <script type="module" src="/js/edit.mjs" defer></script>
+    <script type="module" src="/js/manage.mjs" defer></script>
+    <script type="module" src="/js/index.mjs" defer></script>
+
 </head>
 
 <body>
 
     <header>
+        <div class="bg-yellow-top-left"></div>
+
         <nav class="desktop-nav">
             <a class="logo" href="/home.html"><img src="/image/logo.png" alt="Logo"></a>
 
@@ -29,7 +34,7 @@
                     <a class="nav-item home" href="/home.html">Home</a>
                 </li>
                 <li role="blog" aria-label="blog">
-                    <a class="nav-item blog" href="/index.html">Blog</a>
+                    <a class="nav-item blog" href="/post/manage.html">Blog</a>
                 </li>
 
                 <li role=" aboutus">
@@ -48,6 +53,7 @@
                 </label>
             </div>
 
+
             <label for="check" class="c-open-menu">
                 <i class="fa-solid fa-bars"></i>
             </label>
@@ -55,41 +61,92 @@
     </header>
 
     <main>
-        <span class="loader" id="loader"></span>
+        <h1>Lens of Wanderlust</h1>
+        <section class="main-carousel-container">
+            <div class="carousel-container" id="carousel-container-el">
 
-        <div class="create-new-post-component">
-            <h2>Edit and Update Post</h2>
-
-            <form id="postForm">
-                <div>
-                    <label for="title">Post Title</label>
-                    <input type="text" id="title" name="title" required />
+                <div id="carousel-skeleton-container">
+                    <div class="carousel-title-div skeleton-title-div">
+                        <div class="skeleton-title-line"></div>
+                    </div>
                 </div>
+                <button type="button" class="slider-button" aria-label="left slider arrow" id="prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
 
-                <div>
-                    <label for="content">Post Content</label>
-                    <textarea id="content" name="content" required maxlength="10000"></textarea>
+                <div id="carousel-content-el"></div>
+
+                <button type="button" class="slider-button" aria-label="right slider arrow" id="next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="create-new-post">
+            <a href="/post/create.html"><i class="fa-solid fa-plus"></i> Create new post</a>
+        </section>
+        <section class="blog-main-container">
+            <div class="blog-text-div">
+                <h2 class="blog-text">Blog</h2>
+                <h2 class="blog-post-md">Blog Post</h2>
+                <div class="filter-sorting-search">
+                    <select id="sort-filter">
+                        <option value="none">Sort by Date</option>
+                        <option value="latest">Latest</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
+
+                    <select id="sort-title">
+                        <option value="none">Sort by Title</option>
+                        <option value="title-asc">A - Z</option>
+                        <option value="title-desc">Z - A</option>
+                    </select>
+
+                    <div class="search" id="search" aria-label="search">
+                        <input type="text" aria-label="Search" id="search-bar" placeholder="Search...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
                 </div>
+            </div>
 
-                <div>
-                    <label for="imageUrl">Image URL</label>
-                    <input type="url" id="imageUrl" name="imageUrl" required />
+            <div class="blog-list-container">
+                <div class="post-text-div">
+                    <h2>Post</h2>
                 </div>
-
-                <div>
-                    <label for="imageAlt">Image Alt Text</label>
-                    <input type="text" id="imageAlt" name="imageAlt" />
+                <div class="blog-post-list-container" id="blog-container">
                 </div>
+            </div>
 
-                <div>
-                    <label for="tags">Tags (separate by comma)</label>
-                    <input type="text" id="tags" name="tags" />
+            <div id="pagination-container">
+                <button class="pagination-btn" id="prev-btn" disabled>&laquo; Previous</button>
+                <span id="page-number"></span>
+                <button class="pagination-btn" id="next-btn">Next &raquo;</button>
+            </div>
+
+        </section>
+
+        <section class="gallery-section">
+
+            <h2>Gallery</h2>
+
+            <div class="gallery-grid">
+                <div class="gallery-item item-1">
+                    <img src="/image/home/gallery/image1.jpg" alt="A person capturing a photograph.">
                 </div>
+                <div class="gallery-item item-2">
+                    <img src="/image/home/gallery/image3.jpg" alt="A photograph of a vehicle.">
+                </div>
+                <div class="gallery-item item-3">
+                    <img src="/image/home/gallery/image4.jpg" alt="A photograph of a dog.">
+                </div>
+                <div class="gallery-item item-4">
+                    <img src="/image/home/gallery/image2.jpg" alt="A photograph of a person exploring a waterfall.">
+                </div>
+                <div class="gallery-item item-5">
+                    <img src="/image/home/gallery/image5.jpg" alt="A photograph of a person exploring a waterfall.">
+                </div>
+        </section>
 
-                <input class="publish" type="submit" value="Publish" aria-label="Create or Update post">
-                <div class="message" id="message"></div>
-            </form>
-        </div>
 
     </main>
 

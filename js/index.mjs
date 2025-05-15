@@ -2,6 +2,7 @@ import { createHTML } from './utils.mjs';
 import { setupCarousel } from './carousel.mjs';
 
 const containerEl = document.querySelector('#blog-container');
+const blogText = document.querySelector('.blog-text-div');
 const sortFilterEl = document.getElementById('sort-filter');
 const sortTitleEl = document.getElementById('sort-title');
 const searchBarEl = document.getElementById('search-bar');
@@ -9,7 +10,7 @@ const skeletonContainer = document.getElementById(
   'carousel-skeleton-container'
 );
 
-const fetchblogs = 'https://v2.api.noroff.dev/blog/posts/Nirush/';
+export const fetchblogs = 'https://v2.api.noroff.dev/blog/posts/Nirush/';
 let allPosts = [];
 let currentPage = 1;
 const postsPerPage = 9;
@@ -50,15 +51,31 @@ function showSkeletons(count) {
   }
 }
 function blogPostTemplate({ id, title, body, media }) {
-  const detailsUrl = `/single/index?id=${id}`;
+  const detailsUrl = `/post/single.html?id=${id}`;
+  const isManagePage = window.location.pathname.includes('manage');
   const trimmedBody = body.length > 100 ? body.slice(0, 100) + '...' : body;
 
   return `
-    <a href="${detailsUrl}" class="blog-list" aria-label="View post titled ${title}">
+    <a href="${detailsUrl}" class="blog-list" aria-label="View post titled ${title}" data-id="${id}">
       <img src="${media?.url}" alt="${media?.alt || 'Blog post image'}">
       <h3>${title}</h3>
       <p>${trimmedBody}</p>
       <button aria-label="Read more about ${title}">Learn more...</button>
+
+      ${
+        isManagePage
+          ? `
+        <div id="edit-delete-div">
+          <span class="edit-btn" data-id="${id}" aria-label="Edit post" role="button" tabindex="0">
+            Edit <i class="fa-solid fa-pen-to-square"></i>
+          </span>
+          <span class="delete-btn" data-id="${id}" aria-label="Delete post" role="button" tabindex="0">
+            Delete <i class="fa-solid fa-trash-can"></i>
+          </span>
+        </div>
+        `
+          : ''
+      }
     </a>
   `;
 }
@@ -82,6 +99,8 @@ function createPostListEl(list = []) {
     containerEl.append(newEl);
   });
 
+  setupDeleteButtons();
+  setupEditButtons();
   updatePaginationButtons();
 }
 
@@ -134,6 +153,62 @@ function updatePaginationButtons() {
 
   const nextButton = document.getElementById('next-btn');
   nextButton.disabled = currentPage === totalPages;
+  nextButton.addEventListener('click', () => {
+    blogText.scrollIntoView();
+  });
+}
+
+function setupEditButtons() {
+  const editButtons = document.querySelectorAll('.edit-btn');
+  editButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      const postId = button.dataset.id;
+
+      localStorage.setItem('editPostId', postId);
+      window.location.href = `/post/edit.html`;
+    });
+  });
+}
+
+function setupDeleteButtons() {
+  const deleteButtons = document.querySelectorAll('.delete-btn');
+  deleteButtons.forEach((button) => {
+    button.addEventListener('click', async (event) => {
+      event.preventDefault();
+      const postId = button.dataset.id;
+
+      const confirmDelete = confirm(
+        'Are you sure you want to delete this post?'
+      );
+      if (!confirmDelete) return;
+
+      try {
+        const token = sessionStorage.getItem('userToken');
+        const username = sessionStorage.getItem('userName');
+
+        const response = await fetch(
+          `https://v2.api.noroff.dev/blog/posts/${username}/${postId}`,
+          {
+            method: 'DELETE',
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        if (response.ok) {
+          allPosts = allPosts.filter((post) => post.id !== postId);
+          handleFilters();
+        } else {
+          throw new Error(`Failed to delete post. Status: ${response.status}`);
+        }
+      } catch (error) {
+        console.error('Error deleting post:', error);
+        alert('Failed to delete post. Please make sure you are logged in.');
+      }
+    });
+  });
 }
 
 sortFilterEl.addEventListener('change', handleFilters);

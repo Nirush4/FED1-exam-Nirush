@@ -5,23 +5,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="Lens of Wanderlust">
-    <title>Login / Lens of Wanderlust</title>
+    <title>Single Blog Post/ Lens of Wanderlust</title>
     <meta name="description"
         content="Welcome to our travel photography blog community! Here is a place where travelers, photographers, and creative souls from all around the world come together to share experiences, tell their stories, and stunning images. Whether you are an amateur, a professional, or simply someone who loves to soak up the wonder of the world, you are welcome to join our dynamic, interactive community." />
     <meta name="robots" content="index, follow">
     <link rel="shortcut icon" href="/image/favicon.png" type="image/x-icon">
-    <link href="/css/login.css" rel="stylesheet">
+    <link href="/css/single.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css'
         integrity='sha512-GmZYQ9SKTnOea030Tbiat0Y+jhnYLIpsGAe6QTnToi8hI2nNbVMETHeK4wm4MuYMQdrc38x+sX77+kVD01eNsQ=='
         crossorigin='anonymous' />
-    <script type="module" src="/js/login.mjs" defer></script>
+
+    <script type="module" src="/js/single.mjs" defer></script>
 
 </head>
 
 <body>
 
     <header>
-
         <nav class="desktop-nav">
             <a class="logo" href="/home.html"><img src="/image/logo.png" alt="Logo"></a>
 
@@ -39,8 +39,8 @@
                 </li>
 
                 <ul class="nav-login-register">
-                    <li><a href="/account/login.html" aria-label="login" class="log-in account">Log in</a></li>
-                    <li><a href="/account/register.html" aria-label="register" class="register account">Register</a>
+                    <li><a href="../account/login.html" aria-label="login" class="log-in account">Log in</a></li>
+                    <li><a href="../account/register.html" aria-label="register" class="register account">Register</a>
                     </li>
                 </ul>
 
@@ -58,35 +58,31 @@
 
 
     <main>
-        <span class="loader" id="loader"></span>
 
-        <section class="login-container">
-            <div class="login-img-div">
-                <img src="/image/login/Image.jpg" alt="Rear view of a vehicle driving on a road">
-            </div>
-            <form class="login-form" id="login-form" method="POST">
+        <section id="singe-post-container"></section>
 
-                <h2>Log in</h2>
+        <section class="gallery-section">
 
-                <label class="label" for="name">User name</label>
-                <input type="text" name="number" id="name" placeholder="Enter your user name" required>
-                <label class="label" for="email">Email address</label>
-                <input type="email" name="email" id="email" placeholder="Enter your email address" required>
-                <label class="label" for="Password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password" required>
-                <p>By continuing, you agree to the <span>Terms</span> of use and <span>Privacy Policy.</span></p>
-                <div class="robot-check">
-                    <input class="not-robot" type="checkbox" id="notRobot" required>
-                    <label class="not-robot-label" for="notRobot">I'm not a robot</label>
-                    <img src="/image/login/RecaptchaLogo.svg.png" alt="reCAPTCHA logo">
+            <h2>Gallery</h2>
+
+            <div class="gallery-grid">
+                <div class="gallery-item item-1">
+                    <img src="/image/home/gallery/image1.jpg" alt="A person capturing a photograph.">
                 </div>
-
-                <input class="submit" type="submit" value="Log in" aria-label="Submit to checkout">
-
-                <span class="Do-not-have-account ">Don’t have an account?</span>
-                <a href="" class="sing-up">Sign up</a>
-            </form>
+                <div class="gallery-item item-2">
+                    <img src="/image/home/gallery/image3.jpg" alt="A photograph of a vehicle.">
+                </div>
+                <div class="gallery-item item-3">
+                    <img src="/image/home/gallery/image4.jpg" alt="A photograph of a dog.">
+                </div>
+                <div class="gallery-item item-4">
+                    <img src="/image/home/gallery/image2.jpg" alt="A photograph of a person exploring a waterfall.">
+                </div>
+                <div class="gallery-item item-5">
+                    <img src="/image/home/gallery/image5.jpg" alt="A photograph of a person exploring a waterfall.">
+                </div>
         </section>
+
 
     </main>
 
