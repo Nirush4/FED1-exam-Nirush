@@ -136,6 +136,9 @@
     }
 }
 
+.no-post-found {
+    font-size: clamp(1rem, 0.9200000000000002rem + 0.8999999999999999vw, 2rem);
+}
 
 @media (width<999px) {
 
