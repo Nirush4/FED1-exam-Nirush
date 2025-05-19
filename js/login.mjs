@@ -55,7 +55,7 @@ loginForm.addEventListener('submit', (event) => {
       if (enteredName === 'Nirush') {
         window.location.href = '../post/manage.html';
       } else {
-        window.location.href = './login.html';
+        window.location.href = '../post/manage-new.html';
       }
     } catch (error) {
       console.error('Login error:', error);

@@ -203,35 +203,21 @@ function setupFormSubmission() {
         loader.style.display = 'none';
 
         if (response.ok) {
-          displayMessage(
-            editingPostId
-              ? 'Post updated successfully!'
-              : 'Post created successfully!',
-            'success'
-          );
+          alert('✅ Post updated successfully!');
+
           window.location.href = `/post/manage.html`;
         } else {
-          displayMessage('An error occurred. Please try again.', 'error');
+          alert('An error occurred. Please try again.');
         }
       }, 2000);
     } catch (error) {
       setTimeout(() => {
         loader.style.display = 'none';
-        displayMessage('An error occurred. Please try again.', 'error');
+        alert('An error occurred. Please try again.');
         console.error('Error:', error);
       }, 2000);
     }
   });
-}
-
-function displayMessage(message, type) {
-  const messageDiv = document.getElementById('message');
-  if (messageDiv) {
-    messageDiv.textContent = message;
-    messageDiv.className = type === 'error' ? 'error' : 'success';
-  } else {
-    console.error('Message element not found.');
-  }
 }
 
 window.onload = async function () {

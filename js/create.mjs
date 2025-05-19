@@ -6,15 +6,13 @@ const contentInput = document.querySelector('#content');
 const imageUrlInput = document.querySelector('#imageUrl');
 const imageAltInput = document.querySelector('#imageAlt');
 const tagsInput = document.querySelector('#tags');
-const messageDiv = document.querySelector('#message');
+const loader = document.getElementById('loader');
 
 const name = sessionStorage.getItem('userName');
-
 displayUserNav(name);
 
 postForm.addEventListener('submit', (event) => {
   event.preventDefault();
-
   loader.style.display = 'flex';
 
   setTimeout(() => {
@@ -25,6 +23,12 @@ postForm.addEventListener('submit', (event) => {
 async function handleCreatePost() {
   const token = sessionStorage.getItem('userToken');
   const username = sessionStorage.getItem('userName');
+
+  if (!token) {
+    alert('You must be logged in to publish a post.');
+    loader.style.display = 'none';
+    return;
+  }
 
   const enteredTitle = titleInput.value.trim();
   const enteredBody = contentInput.value.trim();
@@ -38,6 +42,7 @@ async function handleCreatePost() {
 
   if (!enteredTitle || !enteredBody || !enteredImageUrl) {
     alert('Please fill out all required fields.');
+    loader.style.display = 'none';
     return;
   }
 
@@ -63,22 +68,20 @@ async function handleCreatePost() {
     const response = await fetch(postUrl, requestOptions);
 
     if (!response.ok) {
-      throw new Error(`Post failed: ${response.status}`);
+      const errorData = await response.json();
+      console.error('❌ Post failed:', errorData);
+      throw new Error(errorData.message || `Post failed: ${response.status}`);
     }
 
     const responseData = await response.json();
 
     postForm.reset();
-    messageDiv.textContent = 'Post published successfully!';
 
-    if (username) {
-      window.location.href = '../post/manage.html';
-    } else {
-      window.location.href = './index.html';
-    }
+    alert('✅ Post published successfully!');
+    window.location.href = '../post/manage.html';
   } catch (error) {
     console.error('Post creation error:', error);
-    alert('Failed to publish post. Please check your input or login token.');
+    alert(`Failed to publish post: ${error.message}`);
   } finally {
     loader.style.display = 'none';
   }
