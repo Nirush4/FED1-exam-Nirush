@@ -70,7 +70,12 @@
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
 
-                <div id="carousel-content-el"></div>
+                <div id="carousel-content-el">
+                    <a href="" class="img-container">
+                        <img src="https://images.unsplash.com/photo-1621654418779-964637fadd4c?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            style="width: 100dvw;" alt="carousel image placeholder" class="slider-img fade first-img">
+                    </a>
+                </div>
 
                 <button type="button" class="slider-button" aria-label="right slider arrow" id="next">
                     <i class="fa-solid fa-chevron-right"></i>
@@ -83,12 +88,14 @@
                 <h2 class="blog-text">Blog</h2>
                 <h2 class="blog-post-md">Blog Post</h2>
                 <div class="filter-sorting-search">
+                    <label for="sort-filter" style="display: none;">Sort by Date:</label>
                     <select id="sort-filter">
                         <option value="none">Sort by Date</option>
                         <option value="latest">Latest</option>
                         <option value="oldest">Oldest</option>
                     </select>
 
+                    <label for="sort-title" style="display: none;">Sort by Title:</label>
                     <select id="sort-title">
                         <option value="none">Sort by Title</option>
                         <option value="title-asc">A - Z</option>
@@ -96,9 +103,11 @@
                     </select>
 
                     <div class="search" id="search" aria-label="search">
+                        <label for="search-bar" class="visually-hidden" style="display: none;">Search</label>
                         <input type="text" aria-label="Search" id="search-bar" placeholder="Search...">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
+
                 </div>
             </div>
 
