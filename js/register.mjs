@@ -77,7 +77,7 @@ registerForm.addEventListener('submit', (event) => {
       displayUserNav(enteredName);
 
       alert(
-        'Registration successful! You will now be redirected to the login page.'
+        '✅ Registration successful! You will now be redirected to the login page.'
       );
 
       window.location.href = '../account/login.html';

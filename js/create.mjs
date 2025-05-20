@@ -1,5 +1,5 @@
 import { displayUserNav } from './manage.mjs';
-
+const postContainer = document.querySelector('.create-new-post-component');
 const postForm = document.querySelector('#postForm');
 const titleInput = document.querySelector('#title');
 const contentInput = document.querySelector('#content');
@@ -86,3 +86,16 @@ async function handleCreatePost() {
     loader.style.display = 'none';
   }
 }
+
+imageUrlInput.addEventListener('input', () => {
+  const url = imageUrlInput.value.trim();
+
+  if (url) {
+    postContainer.style.backgroundImage = `url('${url}')`;
+    postContainer.style.backgroundSize = 'cover';
+    postContainer.style.backgroundPosition = 'center';
+    postContainer.style.backgroundRepeat = 'no-repeat';
+  } else {
+    postContainer.style.backgroundImage = '';
+  }
+});
