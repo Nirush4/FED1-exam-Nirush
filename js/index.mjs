@@ -10,7 +10,12 @@ const skeletonContainer = document.getElementById(
   'carousel-skeleton-container'
 );
 
-export const fetchblogs = 'https://v2.api.noroff.dev/blog/posts/Nirush/';
+let username = sessionStorage.getItem('userName');
+if (username === null) {
+  username = 'Nirush';
+}
+
+export const fetchblogs = `https://v2.api.noroff.dev/blog/posts/${username}/`;
 let allPosts = [];
 let currentPage = 1;
 const postsPerPage = 9;
@@ -89,7 +94,7 @@ function createPostListEl(list = []) {
   containerEl.innerHTML = '';
 
   if (list.length === 0) {
-    containerEl.innerHTML = '<p>No results found.</p>';
+    containerEl.innerHTML = '<p class="no-post-found">No post found.</p>';
     return;
   }
 

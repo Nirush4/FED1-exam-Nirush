@@ -41,10 +41,12 @@ function renderPost(post) {
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda expedita quia dolores nihil hic labore consectetur perferendis mollitia eveniet dolor fugit eaque veritatis ducimus, id explicabo aspernatur sunt tempore, quam debitis iure atque non.'
     }</p>
     <div class="published-author">
-    <span id="post-author">Author: ${post.author?.name || 'Nirush'}</span>
-    <span id="post-date">Published on: ${
+    <span id="post-author">Author:<p> ${
+      post.author?.name || 'Nirush'
+    }</p></span>
+    <span id="post-date">Published on:<p> ${
       new Date(post.created).toLocaleDateString('en-GB') || '03.04.2025'
-    }</span>
+    }</p></span>
     </div>
     </div>
     </section>

@@ -12,24 +12,27 @@
     align-items: center;
 
 
-    h2 {
-        font-family: 'Poppins';
-        font-size: clamp(1.2rem, 1.04rem + 0.8vw, 2rem);
-        font-weight: 500;
-        padding-bottom: 2rem;
-        color: var(--color-dark-text);
-
-    }
 
     form {
         display: flex;
         flex-direction: column;
         width: 100%;
         gap: 2rem;
-        background: #fff;
+        background: rgba(255, 255, 255, 0.9);
         padding: 1.5rem;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0.2, 0.2, 0.5, 0.1);
+
+
+        h2 {
+            align-self: center;
+            font-family: 'Poppins';
+            font-size: clamp(1.2rem, 1.04rem + 0.8vw, 2rem);
+            font-weight: 500;
+            padding-bottom: 2rem;
+            color: var(--color-dark-text);
+
+        }
     }
 
     label {
@@ -80,4 +83,11 @@
 
 .user-name {
     color: var(--color-button-bg);
+}
+
+@media (width<600px) {
+    .create-new-post-component {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
 }

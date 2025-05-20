@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Lens of Wanderlust">
+    <title>Register / Lens of Wanderlust</title>
+    <meta name="description"
+        content="Join our travel photography blog community! Share experiences, tell stories, and post stunning images. Everyone is welcome to become part of our interactive platform." />
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="/image/favicon.png" type="image/x-icon">
+    <link href="/css/register.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css'
+        integrity='sha512-GmZYQ9SKTnOea030Tbiat0Y+jhnYLIpsGAe6QTnToi8hI2nNbVMETHeK4wm4MuYMQdrc38x+sX77+kVD01eNsQ=='
+        crossorigin='anonymous' />
+    <script type="module" src="/js/register.mjs" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="desktop-nav">
+            <a class="logo" href="../index.html"><img src="/image/logo.png" alt="Logo"></a>
+            <input type="checkbox" id="check">
+            <div class="nav-links">
+                <li><a class="nav-item home" href="/home.html">Home</a></li>
+                <li><a class="nav-item blog" href="/index.html">Blog</a></li>
+                <li><a class="nav-item about" href="/about.html">About</a></li>
+                <ul class="nav-login-register">
+                    <li><a href="/account/login.html" class="log-in account">Log in</a></li>
+                    <li><a href="/account/register.html" class="register account">Register</a></li>
+                </ul>
+                <label for="check" class="c-close-menu"><i class="fa-solid fa-x"></i></label>
+            </div>
+            <label for="check" class="c-open-menu"><i class="fa-solid fa-bars"></i></label>
+        </nav>
+    </header>
+
+    <main>
+        <span class="loader" id="loader"></span>
+
+        <section class="login-container">
+            <div class="login-img-div">
+                <img src="/image/register/register.jpg" alt="Rear view of a vehicle driving on a road">
+            </div>
+            <form class="login-form" id="register-form" method="POST">
+                <h2>Create Account</h2>
+
+                <label class="label" for="username">User Name</label>
+                <input type="text" name="username" id="username" placeholder="Enter your user name" required>
+
+                <label class="label" for="email">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+
+                <label class="label" for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Create a password" required
+                    minlength="7">
+
+                <label class="label" for="confirm-password">Confirm Password</label>
+                <input type="password" name="confirm-password" id="confirm-password"
+                    placeholder="Re-enter your password" required>
+
+                <p>By continuing, you agree to the <span>Terms</span> of use and <span>Privacy Policy.</span></p>
+
+                <div class="robot-check">
+                    <input class="not-robot" type="checkbox" id="notRobot" required>
+                    <label class="not-robot-label" for="notRobot">I'm not a robot</label>
+                    <img src="/image/login/RecaptchaLogo.svg.png" alt="reCAPTCHA logo">
+                </div>
+
+                <input class="submit" type="submit" value="Register" aria-label="Submit registration">
+
+                <span class="Do-not-have-account">Already have an account?</span>
+                <a href="/account/login.html" class="sing-up">Log in</a>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-row-1">
+            <div class="footer-column-1">
+                <div class="footer-logo-div">
+                    <img src="/image/logo.png" alt="Logo">
+                </div>
+            </div>
+            <div class="footer-column-2">
+                <div class="footer-column-2-left">
+                    <a href="/home.html">Home</a><a href="/index.html">Blog</a><a href="/about.html">About</a>
+                </div>
+                <div class="footer-column-2-right">
+                    <a href="/home.html">Terms</a><a href="/home.html">Privacy</a>
+                </div>
+            </div>
+            <div class="footer-column-3">
+                <h4>Follow us at</h4>
+                <div class="footer-social-media-icons">
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.pinterest.com/"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <form action="" class="footer-column-4">
+                <input type="email" placeholder="Enter your email">
+                <input type="submit">
+            </form>
+        </div>
+
+        <div class="footer-row-2">
+            <p>&copy; 2024 Lens of Wanderlust. All rights reserved. (This is a student project.).</p>
+            <p>Designed & Made with ❤️ by <strong>Nirush</strong></p>
+        </div>
+    </footer>
+</body>
+
+</html>

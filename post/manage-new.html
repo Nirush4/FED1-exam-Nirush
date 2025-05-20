@@ -5,23 +5,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="Lens of Wanderlust">
-    <title>Single Blog Post/ Lens of Wanderlust</title>
+    <title>Manage Blog / Lens of Wanderlust</title>
     <meta name="description"
         content="Welcome to our travel photography blog community! Here is a place where travelers, photographers, and creative souls from all around the world come together to share experiences, tell their stories, and stunning images. Whether you are an amateur, a professional, or simply someone who loves to soak up the wonder of the world, you are welcome to join our dynamic, interactive community." />
     <meta name="robots" content="index, follow">
     <link rel="shortcut icon" href="/image/favicon.png" type="image/x-icon">
-    <link href="/css/single.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
+    <link href="/css/manage.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css'
         integrity='sha512-GmZYQ9SKTnOea030Tbiat0Y+jhnYLIpsGAe6QTnToi8hI2nNbVMETHeK4wm4MuYMQdrc38x+sX77+kVD01eNsQ=='
         crossorigin='anonymous' />
-
-    <script type="module" src="/js/single.mjs" defer></script>
+    <script type="module" src="/js/manage.mjs" defer></script>
+    <script type="module" src="/js/index.mjs" defer></script>
 
 </head>
 
 <body>
 
     <header>
+        <div class="bg-yellow-top-left"></div>
+
         <nav class="desktop-nav">
             <a class="logo" href="../index.html"><img src="/image/logo.png" alt="Logo"></a>
 
@@ -31,7 +34,7 @@
                     <a class="nav-item home" href="/home.html">Home</a>
                 </li>
                 <li role="blog" aria-label="blog">
-                    <a class="nav-item blog" href="/index.html">Blog</a>
+                    <a class="nav-item blog" href="/post/manage.html">Blog</a>
                 </li>
 
                 <li role=" aboutus">
@@ -39,9 +42,10 @@
                 </li>
 
                 <ul class="nav-login-register">
-                    <li><a href="../account/login.html" aria-label="login" class="log-in account">Log in</a></li>
-                    <li><a href="../account/register.html" aria-label="register" class="register account">Register</a>
+                    <li><a href="" aria-label="login" class="log-in account" id="log-in">Log in</a>
                     </li>
+                    <li><a href="../account/login.html" aria-label="register" class="register account" id="log-out">Log
+                            out</a></li>
                 </ul>
 
                 <label for="check" class="c-close-menu">
@@ -56,10 +60,75 @@
         </nav>
     </header>
 
-
     <main>
+        <h1>Lens of Wanderlust</h1>
+        <section class="main-carousel-container">
+            <div class="carousel-container" id="carousel-container-el">
 
-        <section id="singe-post-container"></section>
+                <div id="carousel-skeleton-container">
+                    <div class="carousel-title-div skeleton-title-div">
+                        <div class="skeleton-title-line"></div>
+                    </div>
+                </div>
+                <button type="button" class="slider-button" aria-label="left slider arrow" id="prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div id="carousel-content-el">
+                    <a href="" class="img-container">
+                        <img src="https://images.unsplash.com/photo-1621654418779-964637fadd4c?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            style="width: 100dvw;" alt="carousel image placeholder" class="slider-img fade first-img">
+                    </a>
+                </div>
+
+                <button type="button" class="slider-button" aria-label="right slider arrow" id="next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="create-new-post">
+            <a href="/post/create.html"><i class="fa-solid fa-plus"></i> Create new post</a>
+        </section>
+        <section class="blog-main-container">
+            <div class="blog-text-div">
+                <h2 class="blog-text">Blog</h2>
+                <h2 class="blog-post-md">Blog Post</h2>
+                <div class="filter-sorting-search">
+                    <select id="sort-filter">
+                        <option value="none">Sort by Date</option>
+                        <option value="latest">Latest</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
+
+                    <select id="sort-title">
+                        <option value="none">Sort by Title</option>
+                        <option value="title-asc">A - Z</option>
+                        <option value="title-desc">Z - A</option>
+                    </select>
+
+                    <div class="search" id="search" aria-label="search">
+                        <input type="text" aria-label="Search" id="search-bar" placeholder="Search...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-list-container">
+                <div class="post-text-div">
+                    <h2>Post</h2>
+                </div>
+                <div class="blog-post-list-container" id="blog-container">
+                </div>
+            </div>
+
+            <div id="pagination-container">
+                <button class="pagination-btn" id="prev-btn" disabled>&laquo; Previous</button>
+                <span id="page-number"></span>
+                <button class="pagination-btn" id="next-btn">Next &raquo;</button>
+            </div>
+
+        </section>
 
         <section class="gallery-section">
 

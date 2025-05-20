@@ -79,6 +79,7 @@ export function setupEditButtons() {
 }
 
 function loadPostIntoForm(post) {
+  const postContainer = document.querySelector('.create-new-post-component');
   const titleInput = document.getElementById('title');
   const contentInput = document.getElementById('content');
   const imageUrlInput = document.getElementById('imageUrl');
@@ -108,19 +109,19 @@ function loadPostIntoForm(post) {
   } else {
     console.error('One or more form fields not found.');
   }
-}
 
-function resetForm() {
-  const postForm = document.getElementById('postForm');
-  if (postForm) {
-    postForm.reset();
-  }
-  const submitButton = document.querySelector('#postForm .publish');
-  if (submitButton) {
-    submitButton.value = 'Publish';
-    submitButton.setAttribute('aria-label', 'Create new post');
-  }
-  editingPostId = null;
+  imageUrlInput.addEventListener('input', () => {
+    const url = imageUrlInput.value.trim();
+
+    if (url) {
+      postContainer.style.backgroundImage = `url('${url}')`;
+      postContainer.style.backgroundSize = 'cover';
+      postContainer.style.backgroundPosition = 'center';
+      postContainer.style.backgroundRepeat = 'no-repeat';
+    } else {
+      postContainer.style.backgroundImage = '';
+    }
+  });
 }
 
 async function updatePost(postData) {
@@ -203,35 +204,21 @@ function setupFormSubmission() {
         loader.style.display = 'none';
 
         if (response.ok) {
-          displayMessage(
-            editingPostId
-              ? 'Post updated successfully!'
-              : 'Post created successfully!',
-            'success'
-          );
+          alert('✅ Post updated successfully!');
+
           window.location.href = `/post/manage.html`;
         } else {
-          displayMessage('An error occurred. Please try again.', 'error');
+          alert('An error occurred. Please try again.');
         }
       }, 2000);
     } catch (error) {
       setTimeout(() => {
         loader.style.display = 'none';
-        displayMessage('An error occurred. Please try again.', 'error');
+        alert('An error occurred. Please try again.');
         console.error('Error:', error);
       }, 2000);
     }
   });
-}
-
-function displayMessage(message, type) {
-  const messageDiv = document.getElementById('message');
-  if (messageDiv) {
-    messageDiv.textContent = message;
-    messageDiv.className = type === 'error' ? 'error' : 'success';
-  } else {
-    console.error('Message element not found.');
-  }
 }
 
 window.onload = async function () {

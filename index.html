@@ -24,7 +24,7 @@
         <div class="bg-yellow-top-left"></div>
 
         <nav class="desktop-nav">
-            <a class="logo" href="/home.html"><img src="/image/logo.png" alt="Logo"></a>
+            <a class="logo" href="/index.html"><img src="/image/logo.png" alt="Logo"></a>
 
             <input type="checkbox" id="check">
             <div class="nav-links">
@@ -70,7 +70,8 @@
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
 
-                <div id="carousel-content-el"></div>
+                <div id="carousel-content-el">
+                </div>
 
                 <button type="button" class="slider-button" aria-label="right slider arrow" id="next">
                     <i class="fa-solid fa-chevron-right"></i>
@@ -83,12 +84,14 @@
                 <h2 class="blog-text">Blog</h2>
                 <h2 class="blog-post-md">Blog Post</h2>
                 <div class="filter-sorting-search">
+                    <label for="sort-filter" style="display: none;">Sort by Date:</label>
                     <select id="sort-filter">
                         <option value="none">Sort by Date</option>
                         <option value="latest">Latest</option>
                         <option value="oldest">Oldest</option>
                     </select>
 
+                    <label for="sort-title" style="display: none;">Sort by Title:</label>
                     <select id="sort-title">
                         <option value="none">Sort by Title</option>
                         <option value="title-asc">A - Z</option>
@@ -96,9 +99,11 @@
                     </select>
 
                     <div class="search" id="search" aria-label="search">
+                        <label for="search-bar" class="visually-hidden" style="display: none;">Search</label>
                         <input type="text" aria-label="Search" id="search-bar" placeholder="Search...">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
+
                 </div>
             </div>
 
