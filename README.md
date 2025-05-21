@@ -101,7 +101,7 @@ Staging is the enviroment where the team can test the latest features and bug fi
 
 ## Built with 🏗️
 
-<img src="/images/html-logo.png" width="50" height="50"> <img src="/images/css-logo.webp" width="50" height="50"> <img src="/images/js-logo.png" width="50" height="50">
+<img src="/image/html-logo.png" width="50" height="50"> <img src="/image/css-logo.webp" width="50" height="50"> <img src="/image/js-logo.png" width="50" height="50">
 
 ## Testing and debug: 🧪
 
