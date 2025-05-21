@@ -174,25 +174,25 @@
 
     .slider-button {
         font-size: 1.2rem;
-        padding: 0.3rem 0.65rem;
+        padding: 0.4rem 0.7rem;
     }
 
     .carousel-container {
-        min-height: 25rem;
+        min-height: 29rem;
 
         .img-container {
-            min-height: 25rem;
+            min-height: 29rem;
 
             img {
                 display: block;
-                min-height: 25rem;
+                min-height: 29rem;
             }
         }
 
     }
 
     #carousel-skeleton-container {
-        height: 25rem;
+        height: 29rem;
     }
 
 }

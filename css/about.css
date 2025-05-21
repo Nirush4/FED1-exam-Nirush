@@ -1,0 +1,23 @@
+@import url(/css/common-css.css);
+
+
+.about {
+    color: var(--color-primary-text) !important;
+}
+
+.about::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.125rem;
+    width: 100%;
+    background-color: var(--color-secondary);
+    transition: width 0.3s ease;
+}
+
+@media (width <850px) {
+    .about {
+        color: #ffffff !important;
+    }
+}
