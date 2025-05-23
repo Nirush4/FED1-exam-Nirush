@@ -6,6 +6,16 @@ const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
 const loader = document.getElementById('loader');
+const togglePasswordBtn = document.querySelector('.togglePassword');
+
+if (togglePasswordBtn && passwordInput) {
+  togglePasswordBtn.addEventListener('click', () => {
+    const type =
+      passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    togglePasswordBtn.textContent = type === 'password' ? '👁️' : '🙈';
+  });
+}
 
 loginForm.addEventListener('submit', (event) => {
   event.preventDefault();

@@ -18,7 +18,7 @@ if (username === null) {
 export const fetchblogs = `https://v2.api.noroff.dev/blog/posts/${username}/`;
 let allPosts = [];
 let currentPage = 1;
-const postsPerPage = 9;
+const postsPerPage = 12;
 let filteredPosts = [];
 
 fetchPosts();
