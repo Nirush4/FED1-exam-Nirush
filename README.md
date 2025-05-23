@@ -12,10 +12,6 @@ You may only use HTML, CSS and JavaScript – no CSS or JavaScript Frameworks ar
 
 You have been hired to build a front-end user interface for an existing API blogging application. The client has asked for a responsive web application that allows users to view dynamic blog posts. You will use your own account that you create to act as the owner to test the functionality. When you submit the project, your client needs to be able to register, login and manage their blog posts.
 
-## Project Overview 📝
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fermentum orci eu lacus facilisis, at aliquam libero interdum. Fusce vel ullamcorper odio, eu dapibus purus. Curabitur et nisi vitae libero mollis viverra sit amet non mi. Sed eget velit sed nulla laoreet posuere in sit amet sapien. Proin pharetra augue quis ante egestas, vel scelerisque nunc vehicula. Sed condimentum lacinia libero sit amet maximus. Vivamus et mi sit amet leo aliquam luctus eget a sapien. Donec ornare dui vel purus aliquam, ut gravida nunc tempor. Aliquam erat volutpat. Etiam laoreet ligula leo, ac venenatis libero pretium ut. Quisque et magna nec metus euismod tristique ut ut felis.
-
 ## Pages and User Stories 🙋🏼‍♂️
 
 ### Blog Feed Page - GET /blog/posts/<name>
