@@ -71,14 +71,14 @@ The Blog Post Edit Page features a form that gives an owner the ability to edit 
 
 ## Resources
 
-- [Mobile Design](https://squarepumpkin.netlify.app/)
-- [Desktop Design](https://squarepumpkin.netlify.app/)
-- [Production deploy](https://squarepumpkin.netlify.app/)
-- [Deployment CI](https://app.netlify.com/sites/squarepumpkin/overview)
+- [Mobile Design](https://www.figma.com/design/tC4Vb684z0vqyUyatYSfpv/Lens-of-Wanderlust?node-id=442-687&t=Jr5LVkbGvUP7f0JF-1)
+- [Desktop Design](https://www.figma.com/design/tC4Vb684z0vqyUyatYSfpv/Lens-of-Wanderlust?node-id=0-1&t=Jr5LVkbGvUP7f0JF-1)
+- [Production deploy](https://lensofwanderlust.netlify.app/)
+- [Deployment CI](https://app.netlify.com/projects/lensofwanderlust/overview)
 
 ## Report
 
-- [Report](https://docs.google.com/document/d/1WPAOUeC4VgCfYtCfbzz9iHmF238ffcZTLrEwZwUvrJc/edit?usp=sharing)
+- [Report](https://docs.google.com/document/d/1LiamE-jr8ACQNsRPurfkceA7hvBL2KZZfkWJUoTUsA4/edit?usp=sharing)
 
 ## Features
 
