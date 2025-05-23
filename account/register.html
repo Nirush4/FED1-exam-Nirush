@@ -37,6 +37,7 @@
     </header>
 
     <main>
+        <h1 style="display: none;">Hei</h1>
         <span class="loader" id="loader"></span>
 
         <section class="login-container">
@@ -53,13 +54,22 @@
                 <input type="email" name="email" id="email" placeholder="Enter your email address" required>
 
                 <label class="label" for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Create a password" required
-                    minlength="7">
-
+                <div class="password-wrapper">
+                    <input type="password" name="password" id="password" placeholder="Create a password" required
+                        minlength="7">
+                    <button type="button" id="togglePassword" class="togglePassword"
+                        aria-label="Toggle password visibility">
+                        👁️
+                    </button>
+                </div>
                 <label class="label" for="confirm-password">Confirm Password</label>
-                <input type="password" name="confirm-password" id="confirm-password"
-                    placeholder="Re-enter your password" required>
-
+                <div class="password-wrapper">
+                    <input type="password" name="password" id="confirm-password" placeholder="Re-enter your password"" required>
+                    <button type=" button" id="toggleConfirmPassword" class="togglePassword"
+                        aria-label="Toggle password visibility">
+                    👁️
+                    </button>
+                </div>
                 <p>By continuing, you agree to the <span>Terms</span> of use and <span>Privacy Policy.</span></p>
 
                 <div class="robot-check">

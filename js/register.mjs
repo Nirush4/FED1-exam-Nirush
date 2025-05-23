@@ -7,6 +7,30 @@ const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
 const confirmPasswordInput = document.querySelector('#confirm-password');
 const loader = document.getElementById('loader');
+const togglePasswordBtn = document.getElementById('togglePassword');
+const toggleConfirmPasswordBtn = document.getElementById(
+  'toggleConfirmPassword'
+);
+
+if (togglePasswordBtn && passwordInput) {
+  togglePasswordBtn.addEventListener('click', () => {
+    const type =
+      passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    togglePasswordBtn.textContent = type === 'password' ? '👁️' : '🙈';
+  });
+}
+
+if (toggleConfirmPasswordBtn && confirmPasswordInput) {
+  toggleConfirmPasswordBtn.addEventListener('click', () => {
+    const type =
+      confirmPasswordInput.getAttribute('type') === 'password'
+        ? 'text'
+        : 'password';
+    confirmPasswordInput.setAttribute('type', type);
+    toggleConfirmPasswordBtn.textContent = type === 'password' ? '👁️' : '🙈';
+  });
+}
 
 registerForm.addEventListener('submit', (event) => {
   event.preventDefault();
