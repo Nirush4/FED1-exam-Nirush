@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
 
 .blog {
     color: var(--color-primary-text) !important;
@@ -80,11 +81,33 @@
         right: 0;
         width: 95%;
 
+        .read-more {
+            position: absolute;
+            right: 9%;
+            bottom: 1.4rem;
+            border: transparent;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: "Poppins", sans-serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 0.5rem 1.2rem;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            transition: all 0.2s ease-in;
+
+            &:hover {
+                background-color: var(--color-primary);
+                color: #000000;
+            }
+        }
 
         h2 {
             color: #FFFFFF;
-            font-family: "Forum", serif;
-            padding: 1% 9%;
+            font-family: "Italiana", sans-serif;
+            letter-spacing: 0.1rem;
+            text-align: start;
+            padding: 1% 25% 1% 9%;
             font-size: clamp(1.5rem, 1rem + 2.5vw, 4rem);
             line-height: 100%;
         }
@@ -148,6 +171,10 @@
         .img-container .carousel-title-div {
             left: 0;
             width: 100%;
+
+            h2 {
+                padding: 1% 30% 1% 9%;
+            }
         }
 
     }
@@ -162,6 +189,17 @@
 
     #carousel-skeleton-container {
         height: 38rem;
+    }
+
+    .img-container .carousel-title-div {
+
+        h2 {
+            padding: 1% 9% !important;
+        }
+    }
+
+    .read-more {
+        display: none;
     }
 
 }
@@ -182,6 +220,10 @@
 
         .img-container {
             min-height: 29rem;
+
+            .carousel-title-div h2 {
+                padding: 3% 9% !important;
+            }
 
             img {
                 display: block;
@@ -344,7 +386,7 @@
                 }
 
                 h3 {
-                    font-family: "Italiana", sans-serif;
+                    font-family: "Marcellus", serif;
                     font-size: clamp(1.2rem, 1.16rem + 0.19999999999999996vw, 1.4rem);
                     color: #FFFFFF;
                     position: relative;
@@ -432,6 +474,7 @@
             font-size: 1.125rem;
             font-weight: 400;
             margin: 0 0.9375rem;
+            text-align: center;
         }
 
     }

@@ -65,7 +65,7 @@ function blogPostTemplate({ id, title, body, media }) {
       <img src="${media?.url}" alt="${media?.alt || 'Blog post image'}">
       <h3>${title}</h3>
       <p>${trimmedBody}</p>
-      <button aria-label="Read more about ${title}">Learn more...</button>
+      <button aria-label="Read more about ${title}">Read more...</button>
 
       ${
         isManagePage
