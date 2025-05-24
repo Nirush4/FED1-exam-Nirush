@@ -80,10 +80,6 @@ The Blog Post Edit Page features a form that gives an owner the ability to edit 
 - [Production deploy](https://squarepumpkin.netlify.app/)
 - [Deployment CI](https://app.netlify.com/sites/squarepumpkin/overview)
 
-## Report
-
-- [Report](https://docs.google.com/document/d/1WPAOUeC4VgCfYtCfbzz9iHmF238ffcZTLrEwZwUvrJc/edit?usp=sharing)
-
 ## Features
 
 - SEO friendly

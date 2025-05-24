@@ -41,6 +41,7 @@ h1 {
         font-family: "Italiana", sans-serif;
         font-size: clamp(1.3rem, 0.07142857142857162rem + 7.142857142857142vw, 3rem);
         color: var(--color-dark-text);
+        line-height: 3rem;
     }
 
 }
@@ -51,7 +52,7 @@ h1 {
     width: 100%;
     height: auto;
     background-color: var(--color-primary);
-    padding-top: 4%;
+    padding-top: 2%;
 
     p {
         font-size: clamp(0.9rem, 0.8400000000000001rem + 0.29999999999999993vw, 1.2rem);
@@ -76,6 +77,33 @@ h1 {
 
 }
 
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #333;
+    color: white;
+    padding: 0.625rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    z-index: 1000;
+    opacity: 0.95;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.share-btn {
+    border: transparent;
+    background-color: var(--color-button-bg);
+    color: #ffffff;
+    padding: 0.5rem 1.2rem;
+    margin-top: 0.5rem;
+    border-radius: 0.3rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
 
 @media (width<999px) {
 
@@ -96,13 +124,13 @@ h1 {
 
 @media (width <600px) {
     .hero-section-div {
-        min-height: 25rem;
+        min-height: 29rem;
 
         .img-div {
-            min-height: 25rem;
+            min-height: 29rem;
 
             img {
-                min-height: 25rem;
+                min-height: 29rem;
                 object-fit: cover;
             }
         }
@@ -114,5 +142,28 @@ h1 {
             font-size: 0.9rem;
             ;
         }
+    }
+
+    .content-div {
+
+        h2 {
+            line-height: normal;
+        }
+
+    }
+
+    .toast {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        padding: 0.4rem 1rem;
+        font-size: 1rem;
+    }
+
+    .share-btn {
+        border: transparent;
+        background-color: var(--color-button-bg);
+        color: #ffffff;
+        padding: 0.3rem 1.1rem;
+        font-size: 0.9rem;
     }
 }
