@@ -76,10 +76,6 @@ The Blog Post Edit Page features a form that gives an owner the ability to edit 
 - [Production deploy](https://lensofwanderlust.netlify.app/)
 - [Deployment CI](https://app.netlify.com/projects/lensofwanderlust/overview)
 
-## Report
-
-- [Report](https://docs.google.com/document/d/1LiamE-jr8ACQNsRPurfkceA7hvBL2KZZfkWJUoTUsA4/edit?usp=sharing)
-
 ## Features
 
 - SEO friendly

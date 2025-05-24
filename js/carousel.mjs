@@ -22,6 +22,7 @@ function createCarouselEl({ id, title, media }) {
     <a href="${detailsUrl}" class="img-container">
       <img src="${imageUrl}" alt="${altText}" class="slider-img fade first-img">
       <div class="carousel-title-div">
+        <button class="read-more">Read more</button>
         <h2>${title || 'Untitled Post'}</h2>
       </div>
     </a>
