@@ -223,6 +223,7 @@
 
             .carousel-title-div h2 {
                 padding: 3% 9% !important;
+                text-align: center;
             }
 
             img {
@@ -592,9 +593,12 @@
 @media (width<600px) {
     .blog-main-container {
         .blog-text-div .filter-sorting-search {
+            gap: 0.5rem;
 
             select {
                 padding: 0.5rem 1rem;
+                min-width: 8rem;
+                min-height: 2.5rem;
             }
 
             .search {
@@ -604,6 +608,7 @@
         }
     }
 }
+
 
 
 
@@ -640,6 +645,7 @@
 
                     h3 {
                         text-align: center;
+                        line-height: 1.5rem;
                     }
 
                     p {
